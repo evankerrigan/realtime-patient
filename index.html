@@ -7,18 +7,13 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="stylesheet" href="css/jquery.mobile.min.css" /> 
   <link rel="stylesheet" href="css/ios.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <script src="js/jquery.min.js"></script> 
-  <script src="js/jquery.mobile.min.js"></script> 
+  <script src="js/jquery.mobile.min.js"></script>
+  <script src="js/script.js"></script>
   <script type="text/javascript">
-          
-          
     // all dialog buttons should close their parent dialog
-    $(".ui-dialog button").live("click", function() {
-    
-      $("[data-role='dialog']").dialog("close");
-    
-    });
-  
+    $(".ui-dialog button").live("click", function() { $("[data-role='dialog']").dialog("close"); });
   </script>
   <style>
   
@@ -64,6 +59,7 @@
       <li><a href="#appt-1">Header Bars</a></li> 
       <li><a href="#appt-2">Header Buttons</a></li> 
       <li><a href="#appt-3">Footer Tabs</a></li> 
+      <li><a href="#bio-1">Appointment Information (Bio)</a></li> 
     </ul> 
           
     <br />
@@ -74,6 +70,75 @@
 </div><!-- /page --> 
 
 <!-- pages start here -->
+
+<!-- START Deeper Appointment Screens -->
+
+<div data-role="page" id="bio-1"> 
+
+  <div data-role="header">
+    <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
+    <h1>Appointment Information</h1>
+    <a href="#" data-theme="d">Help</a>
+  </div>
+
+	<div data-role="fieldcontain">
+		<fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
+				<input type="radio" name="appt1-switcher" id="appt1-bio" value="bio" checked="checked" />
+				<label for="appt1-bio">Doctor&rsquo;s Bio</label>
+
+				<input type="radio" name="appt1-switcher" id="appt1-maps" value="maps" />
+				<label for="appt1-maps">Maps &amp; Wayfinding</label>
+
+				<input type="radio" name="appt1-switcher" id="appt1-proc" value="proc" />
+				<label for="appt1-proc">Procedure Info</label>
+		</fieldset>
+	</div>
+	
+	<div data-role="content" id="appt1-bio-box" class="appt1-box">
+		<h2>Bio</h2>
+		<p>Blah blah blah blah blah blah blah</p>
+	</div>
+	
+	<div data-role="content" id="appt1-maps-box" class="appt1-box">
+		<h2>Maps &amp; Wayfinding</h2>
+		<p>Blah blah blah blah blah blah blah</p>
+	</div>
+
+	<div data-role="content" id="appt1-proc-box" class="appt1-box">
+		<h2>Procedure</h2>
+		<p>Blah blah blah blah blah blah blah</p>
+	</div>
+</div>
+	
+<!-- 
+	<div data-role="page" id="procedure-1"> 
+  
+	<div data-role="header">
+		<h1>Appointment Information</h1>
+		<a href="#" data-rel="back" data-theme="a">Destinations Program</a>
+	</div>
+
+	<div data-role="fieldcontain">
+		<fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
+				<input type="radio" name="appt-switcher-maps1" id="appt-bio1-bio" value="appt-bio1-bio" checked="checked" />
+				<label for="appt-bio1-bio">Doctor&rsquo;s Bio</label>
+
+				<input type="radio" name="appt-switcher-bio1" id="appt-bio1-maps" value="appt-bio1-maps" />
+				<label for="appt-bio1-maps">Maps &amp; Wayfinding</label>
+
+				<input type="radio" name="appt-switcher-bio1" id="appt-bio1-proc" value="appt-bio1-proc" />
+				<label for="appt-bio1-proc">Procedure Info</label>
+		</fieldset>
+	</div>
+	
+</div>
+
+<div data-role="page" id="map-1"> 
+</div>
+
+-->
+
+<!-- END Deeper Appointment Screens -->
 
 <div data-role="page" id="allHelp"> 
 </div>
