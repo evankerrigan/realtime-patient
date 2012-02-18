@@ -1,2 +1,108 @@
 .segment-control { margin: 0 auto !important }
-/*#appt1-mapsbox, #appt1-procbox { display: none } */ /* Initial hiding of Appt 1 Boxes*/
+
+/* Call Us Prompts Overrides */
+
+#callus-container a[title='Close'] { visibility: hidden }
+
+.callus-prompt { max-width: 25% !important }
+#callus-promptbody { position: relative !important; margin: -17px auto 0 !important; padding: 0.95em !important }
+#prompt-buttons a { float: left; width: 45% !important; color: #fff !important; text-decoration: none !important }
+#callus-promptbody p, #callus-promphead .ui-title, #callus-promptbody .ui-btn-text { color: #fff !important; text-shadow: 0 1px 0 #4C596A; text-align: center }
+#callus-promptbody #prompt-buttons { margin: 0 auto; width: 98% }
+#callus-no { margin-right: 1em; margin-left: 0.75em }
+
+#callus-prompthead {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#5d667d), color-stop(50%,#3a4561));
+  background: #5d667d;
+	
+	/* 
+	Gradient-Start: #5d667d
+	Gradient-End: #3a4561
+	*/
+
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+/*  
+-webkit-box-shadow: 0px 0px 10px rgba(255, 255, 255, .3);
+  -moz-box-shadow: 0px 0px 10px rgba(255, 255, 255, .3);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, .3);
+*/
+  border-top-right-radius: .6em;
+  border-top-left-radius: .6em;
+  border-bottom-right-radius: 170px 20px;
+  border-bottom-left-radius: 170px 20px;
+  position: absolute;
+  top: 0px;
+}
+
+#callus-promptbody {
+	-moz-border-radius-bottomleft: .6em;
+	-webkit-border-bottom-left-radius: .6em;
+	border-top-bottom-radius: .6em;
+	
+	-moz-border-radius-bottomright: .6em;
+	-webkit-border-bottom-right-radius: .6em;
+	border-bottom-right-radius: .6em;
+
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+.alert-button {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#464972), color-stop(50%,#212555));
+    background: -moz-linear-gradient(center top, #464972 50%, #212555 50%);
+    -webkit-box-shadow: 1px 1px 1px 0px #3f426d;
+    -moz-box-shadow: 1px 1px 1px 0px #3f426d;
+    box-shadow: 1px 1px 1px 0px #3f426d;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: background-color 0s 0;
+    -moz-transition: background-color 0s 0;
+    -o-transition: background-color 0s 0;
+    transition: background-color 0s 0;
+    text-shadow: 0px -1px 1px #37363c;
+    padding: 8px 0;
+    display: inline-block;
+    border-color: #333;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.alert-button:active {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#9698af), color-stop(50%,#50547a));
+    background: -moz-linear-gradient(center top, #9698af 50%, #50547a 50%);
+    text-shadow: 0px -1px 1px #2c2c34;
+}
+
+.alert-button-lighter { 
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#9698af), color-stop(50%,#50547a));
+   background: -moz-linear-gradient(center top, #9698af 50%, #50547a 50%);
+	-webkit-box-shadow: 1px 1px 1px 0px #3f426d;
+	-moz-box-shadow: 1px 1px 1px 0px #3f426d;
+	box-shadow: 1px 1px 1px 0px #3f426d;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-transition: background-color 0s 0;
+	-moz-transition: background-color 0s 0;
+	-o-transition: background-color 0s 0;
+	transition: background-color 0s 0;
+   text-shadow: 0px -1px 1px #2c2c34;
+	padding: 8px 0;
+	display: inline-block;
+	border-color: #333;
+	border-width: 1px;
+	border-style: solid;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#callus-promptbody { background-color: #162344 !important }
