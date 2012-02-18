@@ -3,11 +3,12 @@
   <head> 
   <meta charset="utf-8" /> 
   <title>Destinations Program</title> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="stylesheet" href="css/jquery.mobile.min.css" /> 
-  <link rel="stylesheet" href="css/ios.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/jquery.mobile.min.css"> 
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="css/ios.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery.min.js"></script> 
   <script src="js/jquery.mobile.min.js"></script>
   <script src="js/script.js"></script>
@@ -30,7 +31,7 @@
 <!-- ios jquery mobile  http://taitems.github.com/iOS-Inspired-jQuery-Mobile-Theme/ -->
 <!-- ios popover css    http://jsfiddle.net/XYubE/ -->
 
-<div data-role="page"> 
+<div data-role="page" id="home-screen"> 
  
   <div data-role="header"> 
     <a href="#" data-theme="d">Call Us Now</a>
@@ -38,35 +39,57 @@
     <a href="#" data-theme="d">Help</a>
   </div><!-- /header --> 
  
-  <div data-role="content"> 
-    <p>Hello, Nathan Bowman! You have <strong>three appointments today</strong>.</p> 
- 
-    
-    <div data-role="fieldcontain">
-      <fieldset data-role="controlgroup" data-type="horizontal">
-          <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
-          <label for="radio-choice-1">All</label>
+	<div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
+          <input type="radio" name="cal-switcher" id="cal-all" value="all" />
+          <label for="cal-all">All</label>
 
-          <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"  />
-          <label for="radio-choice-2">Today</label>
+          <input type="radio" name="cal-switcher" id="cal-today" value="today" checked="checked" />
+          <label for="cal-today">Today</label>
 
-          <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3"  />
-          <label for="radio-choice-3">Tomorrow</label>
+          <input type="radio" name="cal-switcher" id="cal-tom" value="tomorrow" />
+          <label for="cal-tom">Tomorrow</label>
       </fieldset>
     </div>
 
-    <ul data-role="listview" data-inset="true"> 
-      <li><a href="#appt-1">Header Bars</a></li> 
-      <li><a href="#appt-2">Header Buttons</a></li> 
-      <li><a href="#appt-3">Footer Tabs</a></li> 
-      <li><a href="#bio-1">Appointment Information (Bio)</a></li> 
-    </ul> 
+	<div data-role="content" id="cal-today-box" class="cal-box">
+		<p>Hello, Nathan Bowman! You have <strong>three appointments today</strong>.</p> 
+		<ul data-role="listview" data-inset="true"> 
+			<li><a href="#bio-1">Appointment Information - Today #1</a></li>
+      	<li><a href="#bio-2">Appointment Information - Today #2</a></li>
+      	<li><a href="#bio-3">Appointment Information - Today #3</a></li>
+    	</ul>
+	</div> 
+	
+	<div data-role="content" id="cal-tomorrow-box" class="cal-box">
+		<p>Hello, Nathan Bowman! You have <strong>three appointments tomorrow</strong>.</p>
+		<ul data-role="listview" data-inset="true"> 
+			<li><a href="#bio-4">Appointment Information - Tomorrow #1</a></li>
+			<li><a href="#bio-5">Appointment Information - Tomorrow #2</a></li>
+			<li><a href="#bio-6">Appointment Information - Tomorrow #3</a></li>
+		</ul>
+	</div>
+	
+	<div data-role="content" id="cal-all-box" class="cal-box">
+		<p>Hello, Nathan Bowman! You have <strong>nine total appointments</strong>.</p>
+		<ul data-role="listview" data-inset="true"> 
+			<li><a href="#bio-7">Appointment Information - Yesterday #1</a></li>
+			<li><a href="#bio-8">Appointment Information - Yesterday #2</a></li>
+			<li><a href="#bio-9">Appointment Information - Yesterday #3</a></li>
+			<li><a href="#bio-1">Appointment Information - Today #1</a></li>
+      	<li><a href="#bio-2">Appointment Information - Today #2</a></li>
+      	<li><a href="#bio-3">Appointment Information - Today #3</a></li>
+			<li><a href="#bio-4">Appointment Information - Tomorrow #1</a></li>
+			<li><a href="#bio-5">Appointment Information - Tomorrow #2</a></li>
+			<li><a href="#bio-6">Appointment Information - Tomorrow #3</a></li>
+		</ul>
+	</div>
           
     <br />
       
     <br />
  
-    </div><!-- /ui-body wrapper --> 
+    <!-- /ui-body wrapper --> 
 </div><!-- /page --> 
 
 <!-- pages start here -->
@@ -77,6 +100,7 @@
 
   <div data-role="header">
     <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
+    <a href="#" data-theme="d" class="span2 offset2" id="call-us">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d">Help</a>
   </div>
@@ -109,34 +133,46 @@
 		<p>Blah blah blah blah blah blah blah</p>
 	</div>
 </div>
-	
-<!-- 
-	<div data-role="page" id="procedure-1"> 
-  
-	<div data-role="header">
-		<h1>Appointment Information</h1>
-		<a href="#" data-rel="back" data-theme="a">Destinations Program</a>
-	</div>
+
+<div data-role="page" id="bio-2"> 
+
+  <div data-role="header">
+    <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
+    <a href="#" data-theme="d" class="span2 offset2" id="call-us">Call Us Now</a>
+    <h1>Appointment Information</h1>
+    <a href="#" data-theme="d">Help</a>
+  </div>
 
 	<div data-role="fieldcontain">
 		<fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
-				<input type="radio" name="appt-switcher-maps1" id="appt-bio1-bio" value="appt-bio1-bio" checked="checked" />
-				<label for="appt-bio1-bio">Doctor&rsquo;s Bio</label>
+				<input type="radio" name="appt2-switcher" id="appt2-bio" value="bio" checked="checked" />
+				<label for="appt2-bio">Doctor&rsquo;s Bio</label>
 
-				<input type="radio" name="appt-switcher-bio1" id="appt-bio1-maps" value="appt-bio1-maps" />
-				<label for="appt-bio1-maps">Maps &amp; Wayfinding</label>
+				<input type="radio" name="appt2-switcher" id="appt2-maps" value="maps" />
+				<label for="appt2-maps">Maps &amp; Wayfinding</label>
 
-				<input type="radio" name="appt-switcher-bio1" id="appt-bio1-proc" value="appt-bio1-proc" />
-				<label for="appt-bio1-proc">Procedure Info</label>
+				<input type="radio" name="appt2-switcher" id="appt2-proc" value="proc" />
+				<label for="appt2-proc">Procedure Info</label>
 		</fieldset>
 	</div>
 	
-</div>
+	<div data-role="content" id="appt2-bio-box" class="appt2-box">
+		<h2>Bio</h2>
+		<p>Blah blah blah blah blah blah blah</p>
+	</div>
+	
+	<div data-role="content" id="appt2-maps-box" class="appt2-box">
+		<h2>Maps &amp; Wayfinding</h2>
+		<p>Blah blah blah blah blah blah blah</p>
+	</div>
 
-<div data-role="page" id="map-1"> 
+	<div data-role="content" id="appt2-proc-box" class="appt2-box">
+		<h2>Procedure</h2>
+		<p>Blah blah blah blah blah blah blah</p>
+	</div>
 </div>
-
--->
+	
+	
 
 <!-- END Deeper Appointment Screens -->
 
