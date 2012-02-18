@@ -21,4 +21,10 @@ $(document).ready(function() {
 	$("#home-screen :radio[name=cal-switcher]").trigger('change');
 	$("#bio-1 :radio[name=appt1-switcher]").trigger('change');
 	$("#bio-2 :radio[name=appt2-switcher]").trigger('change');	
+
+	//Call us Button
+	$('a.callus-button').click(function() {
+		$('#callus-container').modal();
+	});
+
 });

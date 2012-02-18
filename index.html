@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="css/ios.css">
   <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/jquery.min.js"></script> 
+  <script src="js/jquery.min.js"></script>
   <script src="js/jquery.mobile.min.js"></script>
+  <script src="js/jquery.simplemodal.js"></script>
   <script src="js/script.js"></script>
   <script type="text/javascript">
     // all dialog buttons should close their parent dialog
@@ -34,7 +35,7 @@
 <div data-role="page" id="home-screen"> 
  
   <div data-role="header"> 
-    <a href="callus.html" data-inline="true" data-rel="dialog" data-transition="pop" data-theme="d">Call Us Now</a>
+    <a href="#" data-inline="true" data-rel="dialog" data-transition="pop" data-theme="d" class="callus-button">Call Us Now</a>
     <h1>Destinations Program</h1>
     <a href="#" data-theme="d">Help</a>
   </div><!-- /header --> 
@@ -178,6 +179,22 @@
 	
 
 <!-- END Deeper Appointment Screens -->
+
+
+<!-- START Call Us Screen -->
+<div data-role="page">
+	<div id="callus-container">
+		<div class="callus-prompt" id="callus-prompthead"></div>
+		<div class="callus-prompt" id="callus-promptbody">
+			<p>Would you like for us to give you a call now?</p>
+			<div id="prompt-buttons">
+				<a href="#" class="alert-button modalCloseImg simplemodal-close" id="callus-no">No, Thanks</a>
+				<a href="#" class="alert-button-lighter modalCloseImg simplemodal-close" id="callus-yes">Please Call Me</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END -->
 
 <div data-role="page" id="allHelp"> 
 </div>

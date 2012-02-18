@@ -4,10 +4,12 @@
 
 #callus-container {
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	margin-top: -70px;
-	margin-left: -180px
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+#simplemodal-overlay {
+	background-color: #000;
+	opacity: 0.9;
 }
 
 #callus-container a[title='Close'] { visibility: hidden }
