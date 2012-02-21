@@ -14,15 +14,14 @@
   <script>
     // Simple state machine to let us change/filter pages.
     var APP = {
-      prev: 'null',
       page: '#home-screen',
       control: 'today'
     };
 
     function setUpPage() {
-      // Event handlers for page change links.
       $('div.call-alert').hide();
 
+      // Event handler for page change links.
       $('a.page').tap(function() {
         APP.control = $(this).attr('class').split(' ')[1]
         APP.page = $(this).attr('href');
@@ -50,15 +49,20 @@
 
       });
 
+      // Back button fix
+      $('a[data-rel="back"]').click(function() {
+        APP.page = '#home-screen';
+        APP.control = 'today';
+      });
+
       $(".ui-dialog button").live("click", function() { $("[data-role='dialog']").dialog("close"); });
 
-
-      $('input[value="' + APP.control + '"]').trigger('change');
-
+      $('div[data-role="page"]').hide();
+      $(APP.page).show();
       $('div[data-role="content"]').hide();
       $('div[id*=' + APP.control + ']').show();
 
-      console.log(APP.control);
+      $('input[value="' + APP.control + '"]').trigger('change');
     }
 
     $('div[data-role="page"]').live('pageinit', setUpPage);
@@ -540,7 +544,7 @@
 <div data-role="page" id="app-2">
 
   <div data-role="header">
-    <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
+    <a href="#home-screen" data-rel="back" data-theme="a">Destinations Program</a>
     <a href="#" data-theme="d" class="span2 offset2">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d">Help</a>
@@ -578,7 +582,7 @@
 <div data-role="page" id="app-3">
 
   <div data-role="header">
-    <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
+    <a href="#home-screen" data-rel="back" data-theme="a">Destinations Program</a>
     <a href="#" data-theme="d" class="span2 offset2">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d">Help</a>
@@ -616,7 +620,7 @@
 <div data-role="page" id="app-4">
 
   <div data-role="header">
-    <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
+    <a href="#home-screen" data-rel="back" data-theme="a">Destinations Program</a>
     <a href="#" data-theme="d" class="span2 offset2">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d">Help</a>
@@ -654,7 +658,7 @@
 <div data-role="page" id="app-5">
 
   <div data-role="header">
-    <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
+    <a href="#home-screen" data-rel="back" data-theme="a">Destinations Program</a>
     <a href="#" data-theme="d" class="span2 offset2">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d">Help</a>
@@ -692,7 +696,7 @@
 <div data-role="page" id="app-6">
 
   <div data-role="header">
-    <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
+    <a href="#home-screen" data-rel="back" data-theme="a">Destinations Program</a>
     <a href="#" data-theme="d" class="span2 offset2">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d">Help</a>
