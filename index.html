@@ -42,6 +42,7 @@
       // Help Button Trigger Popover
       $('a.help-button').tap(function () { 
         $('div.popover').fadeToggle("fast", "linear");
+        
         $('*').not('a').not('.ui-bar-a').not('.ui-btn-text').one('tap', function(ev) {
           ev.stopPropagation();
           $('div.popover').fadeOut('fast', 'linear');
