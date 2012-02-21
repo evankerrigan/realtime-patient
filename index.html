@@ -7,100 +7,486 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="stylesheet" href="css/jquery.mobile.min.css"> 
   <link rel="stylesheet" href="css/ios.css">
-  <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.mobile.min.js"></script>
   <script src="js/jquery.simplemodal.js"></script>
   <script src="js/script.js"></script>
-  <script type="text/javascript">
-    // all dialog buttons should close their parent dialog
-    $(".ui-dialog button").live("click", function() { $("[data-role='dialog']").dialog("close"); });
-  </script>
-  <style>
-  
-    #footerTabs {
-      background: #FFF -webkit-radial-gradient(circle, #FFF, #dee2e4);
-    }
-  
-  </style>
 </head> 
 <body> 
- 
-<!-- Documentation -->
-<!-- jquery mobile      http://jquerymobile.com/demos/1.0.1/ -->
-<!-- ios jquery mobile  http://taitems.github.com/iOS-Inspired-jQuery-Mobile-Theme/ -->
-<!-- ios popover css    http://jsfiddle.net/XYubE/ -->
 
 <div data-role="page" id="home-screen"> 
- 
+
   <div data-role="header"> 
     <a href="#" data-inline="true" data-rel="dialog" data-transition="pop" data-theme="d" class="callus-button">Call Us Now</a>
     <h1>Destinations Program</h1>
     <a href="#" data-theme="d" class="help-button">Help</a>
   </div><!-- /header --> 
- 
-	<div data-role="fieldcontain">
-      <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
-          <input type="radio" name="cal-switcher" id="cal-all" value="all" />
-          <label for="cal-all">All</label>
 
-          <input type="radio" name="cal-switcher" id="cal-today" value="today" checked="checked" />
-          <label for="cal-today">Today</label>
+  <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
+      <input type="radio" name="cal-switcher" id="cal-all" value="all" />
+      <label for="cal-all">All</label>
 
-          <input type="radio" name="cal-switcher" id="cal-tom" value="tomorrow" />
-          <label for="cal-tom">Tomorrow</label>
-      </fieldset>
-    </div>
-	
-	<div data-role="content" id="cal-tomorrow-box" class="cal-box">
-		<p>Hello, Nathan Bowman! You have <strong>three appointments tomorrow</strong>.</p>
-		<ul data-role="listview" data-inset="true"> 
-			<li><a href="#bio-4">Appointment Information - Tomorrow #1</a></li>
-			<li><a href="#bio-5">Appointment Information - Tomorrow #2</a></li>
-			<li><a href="#bio-6">Appointment Information - Tomorrow #3</a></li>
-		</ul>
-	</div>
-	
-	<div data-role="content" id="cal-today-box" class="cal-box">
-		<p>Hello, Nathan Bowman! You have <strong>three appointments today</strong>.</p> 
-		<ul data-role="listview" data-inset="true"> 
-			<li><a href="#bio-1">Appointment Information - Today #1</a></li>
-      	<li><a href="#bio-2">Appointment Information - Today #2</a></li>
-      	<li><a href="#bio-3">Appointment Information - Today #3</a></li>
-    	</ul>
-	</div>
-	
-	<div data-role="content" id="cal-all-box" class="cal-box">
-		<p>Hello, Nathan Bowman! You have <strong>nine total appointments</strong>.</p>
-		<ul data-role="listview" data-inset="true"> 
-			<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-b ui-btn-up-undefined">Yesterday</li>
-			<li><a href="#bio-7">Appointment Information - Yesterday #1</a></li>
-			<li><a href="#bio-8">Appointment Information - Yesterday #2</a></li>
-			<li><a href="#bio-9">Appointment Information - Yesterday #3</a></li>
-			<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-b ui-btn-up-undefined">Today</li>
-			<li><a href="#bio-1">Appointment Information - Today #1</a></li>
-      	<li><a href="#bio-2">Appointment Information - Today #2</a></li>
-      	<li><a href="#bio-3">Appointment Information - Today #3</a></li>
-			<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-b ui-btn-up-undefined">Tomorrow</li>
-			<li><a href="#bio-4">Appointment Information - Tomorrow #1</a></li>
-			<li><a href="#bio-5">Appointment Information - Tomorrow #2</a></li>
-			<li><a href="#bio-6">Appointment Information - Tomorrow #3</a></li>
-		</ul>
-	</div>
-          
-    <br />
-      
-    <br />
- 
-    <!-- /ui-body wrapper --> 
-</div><!-- /page --> 
+      <input type="radio" name="cal-switcher" id="cal-today" value="today" checked="checked" />
+      <label for="cal-today">Today</label>
 
-<!-- pages start here -->
+      <input type="radio" name="cal-switcher" id="cal-tom" value="tomorrow" />
+      <label for="cal-tom">Tomorrow</label>
+    </fieldset>
+  </div>
 
-<!-- START Deeper Appointment Screens -->
+  <div data-role="content" id="cal-tomorrow-box" class="cal-box tomorrow">
+    <p>Hello, Nathan Bowman! You have <strong>three appointments tomorrow</strong>.</p>
+    <ul data-role="listview" data-inset="true"> 
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#app-4" class="page maps">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#app-4" class="page proc">
+              <h1>Full-Body Physical</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#app-4" class="page bio">
+              <div><img src="img/doc1_thumb.jpg" /></div>
+              <div><caption>Dr. William Gordon</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#app-5" class="page maps">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#app-5" class="page proc">
+              <h1>What the what</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#app-5" class="page bio">
+              <div><img src="img/doc2_thumb.jpg" /></div>
+              <div><caption>Dr. Linda Sanchez</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#app-6" class="page maps">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#app-6" class="page proc">
+              <h1>Another title</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#app-6" class="page bio">
+              <div><img src="img/doc3_thumb.jpg" /></div>
+              <div><caption>Dr. Jeff Thompson</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <div data-role="content" id="cal-today-box" class="cal-box today">
+    <p>Hello, Nathan Bowman! You have <strong>three appointments today</strong>.</p>
+    <ul data-role="listview" data-inset="true"> 
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#app-1" class="page maps">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#app-1" class="page proc">
+              <h1>Full-Body Physical</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#app-1" class="page bio">
+              <div><img src="img/doc1_thumb.jpg" /></div>
+              <div><caption>Dr. William Gordon</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#app-2" class="page maps">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#app-2" class="page proc">
+              <h1>What the what</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#app-2" class="page bio">
+              <div><img src="img/doc2_thumb.jpg" /></div>
+              <div><caption>Dr. Linda Sanchez</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#app-3" class="page maps">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#app-3" class="page proc">
+              <h1>Another title</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#app-3" class="page bio">
+              <div><img src="img/doc3_thumb.jpg" /></div>
+              <div><caption>Dr. Jeff Thompson</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <div data-role="content" id="cal-all-box" class="cal-box all">
+    <p>Hello, Nathan Bowman! You have <strong>nine total appointments</strong>.</p>
+    <ul data-role="listview" data-inset="true"> 
+      <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-b ui-btn-up-undefined">Yesterday</li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#bio-1">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#bio-1">
+              <h1>Full-Body Physical</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#bio-1">
+              <div><img src="img/doc1_thumb.jpg" /></div>
+              <div><caption>Dr. William Gordon</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#bio-2">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#bio-2">
+              <h1>What the what</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#bio-2">
+              <div><img src="img/doc2_thumb.jpg" /></div>
+              <div><caption>Dr. Linda Sanchez</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#bio-3">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#bio-3">
+              <h1>Another title</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#bio-3">
+              <div><img src="img/doc3_thumb.jpg" /></div>
+              <div><caption>Dr. Jeff Thompson</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-b ui-btn-up-undefined">Today</li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#bio-1">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#bio-1">
+              <h1>Full-Body Physical</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#bio-1">
+              <div><img src="img/doc1_thumb.jpg" /></div>
+              <div><caption>Dr. William Gordon</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#bio-1">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#bio-1">
+              <h1>What the what</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#bio-1">
+              <div><img src="img/doc2_thumb.jpg" /></div>
+              <div><caption>Dr. Linda Sanchez</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#bio-1">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#bio-1">
+              <h1>Another title</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#bio-1">
+              <div><img src="img/doc3_thumb.jpg" /></div>
+              <div><caption>Dr. Jeff Thompson</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-b ui-btn-up-undefined">Tomorrow</li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#bio-1">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#bio-1">
+              <h1>Full-Body Physical</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#bio-1">
+              <div><img src="img/doc1_thumb.jpg" /></div>
+              <div><caption>Dr. William Gordon</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#bio-1">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#bio-1">
+              <h1>What the what</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#bio-1">
+              <div><img src="img/doc2_thumb.jpg" /></div>
+              <div><caption>Dr. Linda Sanchez</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="ui-grid-d">
+          <div class="ui-block-a loc-info">
+            <a href="#bio-1">
+              <h1>08:30 AM</h1>
+              <p>Building A, Room 2345</p>
+            </a>
+          </div>
+          <div class="ui-block-b procedure-info">
+            <a href="#bio-1">
+              <h1>Another title</h1>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            </a>
+          </div>
+          <div class="ui-block-c"></div>
+          <div class="ui-block-d"></div>
+          <div class="ui-block-e doc-info">
+            <a href="#bio-1">
+              <div><img src="img/doc3_thumb.jpg" /></div>
+              <div><caption>Dr. Jeff Thompson</caption></div>
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
 
-<div data-role="page" id="bio-1"> 
+<div data-role="page" id="app-1">
+
+  <div data-role="header">
+    <a href="#home-screen" data-rel="back" data-theme="a">Destinations Program</a>
+    <a href="#" data-theme="d" class="span2 offset2">Call Us Now</a>
+    <h1>Appointment Information</h1>
+    <a href="#" data-theme="d">Help</a>
+  </div>
+
+  <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
+        <input type="radio" name="appt1-switcher" id="appt1-bio" value="bio" checked="checked" />
+        <label for="appt1-bio">Doctor&rsquo;s Bio</label>
+
+        <input type="radio" name="appt1-switcher" id="appt1-maps" value="maps" />
+        <label for="appt1-maps">Maps &amp; Wayfinding</label>
+
+        <input type="radio" name="appt1-switcher" id="appt1-proc" value="proc" />
+        <label for="appt1-proc">Procedure Info</label>
+    </fieldset>
+  </div>
+  
+  <div data-role="content" id="appt1-bio-box" class="appt1-box">
+    <h2>Bio</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+  
+  <div data-role="content" id="appt1-maps-box" class="appt1-box">
+    <h2>Maps &amp; Wayfinding</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+
+  <div data-role="content" id="appt1-proc-box" class="appt1-box">
+    <h2>Procedure</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+</div>
+
+<div data-role="page" id="app-2">
 
   <div data-role="header">
     <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
@@ -109,79 +495,190 @@
     <a href="#" data-theme="d">Help</a>
   </div>
 
-	<div data-role="fieldcontain">
-		<fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
-				<input type="radio" name="appt1-switcher" id="appt1-bio" value="bio" checked="checked" />
-				<label for="appt1-bio">Doctor&rsquo;s Bio</label>
+  <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
+        <input type="radio" name="appt2-switcher" id="appt2-bio" value="bio" checked="checked" />
+        <label for="appt2-bio">Doctor&rsquo;s Bio</label>
 
-				<input type="radio" name="appt1-switcher" id="appt1-maps" value="maps" />
-				<label for="appt1-maps">Maps &amp; Wayfinding</label>
+        <input type="radio" name="appt2-switcher" id="appt2-maps" value="maps" />
+        <label for="appt2-maps">Maps &amp; Wayfinding</label>
 
-				<input type="radio" name="appt1-switcher" id="appt1-proc" value="proc" />
-				<label for="appt1-proc">Procedure Info</label>
-		</fieldset>
-	</div>
-	
-	<div data-role="content" id="appt1-bio-box" class="appt1-box">
-		<h2>Bio</h2>
-		<p>Blah blah blah blah blah blah blah</p>
-	</div>
-	
-	<div data-role="content" id="appt1-maps-box" class="appt1-box">
-		<h2>Maps &amp; Wayfinding</h2>
-		<p>Blah blah blah blah blah blah blah</p>
-	</div>
+        <input type="radio" name="appt2-switcher" id="appt2-proc" value="proc" />
+        <label for="appt2-proc">Procedure Info</label>
+    </fieldset>
+  </div>
+  
+  <div data-role="content" id="appt2-bio-box" class="appt2-box">
+    <h2>Bio</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+  
+  <div data-role="content" id="appt2-maps-box" class="appt2-box">
+    <h2>Maps &amp; Wayfinding</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
 
-	<div data-role="content" id="appt1-proc-box" class="appt1-box">
-		<h2>Procedure</h2>
-		<p>Blah blah blah blah blah blah blah</p>
-	</div>
+  <div data-role="content" id="appt2-proc-box" class="appt3-box">
+    <h2>Procedure</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
 </div>
 
-<div data-role="page" id="bio-2"> 
+<div data-role="page" id="app-3">
 
   <div data-role="header">
     <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
-    <a href="#" data-theme="d" class="span2 offset2" id="call-us">Call Us Now</a>
+    <a href="#" data-theme="d" class="span2 offset2">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d">Help</a>
   </div>
 
-	<div data-role="fieldcontain">
-		<fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
-				<input type="radio" name="appt2-switcher" id="appt2-bio" value="bio" checked="checked" />
-				<label for="appt2-bio">Doctor&rsquo;s Bio</label>
+  <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
+        <input type="radio" name="appt3-switcher" id="appt3-bio" value="bio" checked="checked" />
+        <label for="appt3-bio">Doctor&rsquo;s Bio</label>
 
-				<input type="radio" name="appt2-switcher" id="appt2-maps" value="maps" />
-				<label for="appt2-maps">Maps &amp; Wayfinding</label>
+        <input type="radio" name="appt3-switcher" id="appt3-maps" value="maps" />
+        <label for="appt3-maps">Maps &amp; Wayfinding</label>
 
-				<input type="radio" name="appt2-switcher" id="appt2-proc" value="proc" />
-				<label for="appt2-proc">Procedure Info</label>
-		</fieldset>
-	</div>
-	
-	<div data-role="content" id="appt2-bio-box" class="appt2-box">
-		<h2>Bio</h2>
-		<p>Blah blah blah blah blah blah blah</p>
-	</div>
-	
-	<div data-role="content" id="appt2-maps-box" class="appt2-box">
-		<h2>Maps &amp; Wayfinding</h2>
-		<p>Blah blah blah blah blah blah blah</p>
-	</div>
+        <input type="radio" name="appt3-switcher" id="appt3-proc" value="proc" />
+        <label for="appt3-proc">Procedure Info</label>
+    </fieldset>
+  </div>
+  
+  <div data-role="content" id="appt3-bio-box" class="appt3-box">
+    <h2>Bio</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+  
+  <div data-role="content" id="appt3-maps-box" class="appt3-box">
+    <h2>Maps &amp; Wayfinding</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
 
-	<div data-role="content" id="appt2-proc-box" class="appt2-box">
-		<h2>Procedure</h2>
-		<p>Blah blah blah blah blah blah blah</p>
-	</div>
+  <div data-role="content" id="appt3-proc-box" class="appt3-box">
+    <h2>Procedure</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
 </div>
-	
-	
 
+<div data-role="page" id="app-4">
+
+  <div data-role="header">
+    <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
+    <a href="#" data-theme="d" class="span2 offset2">Call Us Now</a>
+    <h1>Appointment Information</h1>
+    <a href="#" data-theme="d">Help</a>
+  </div>
+
+  <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
+        <input type="radio" name="appt4-switcher" id="appt4-bio" value="bio" checked="checked" />
+        <label for="appt4-bio">Doctor&rsquo;s Bio</label>
+
+        <input type="radio" name="appt4-switcher" id="appt4-maps" value="maps" />
+        <label for="appt4-maps">Maps &amp; Wayfinding</label>
+
+        <input type="radio" name="appt4-switcher" id="appt4-proc" value="proc" />
+        <label for="appt4-proc">Procedure Info</label>
+    </fieldset>
+  </div>
+  
+  <div data-role="content" id="appt4-bio-box" class="appt4-box">
+    <h2>Bio</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+  
+  <div data-role="content" id="appt4-maps-box" class="appt4-box">
+    <h2>Maps &amp; Wayfinding</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+
+  <div data-role="content" id="appt4-proc-box" class="appt4-box">
+    <h2>Procedure</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+</div>
+
+<div data-role="page" id="app-5">
+
+  <div data-role="header">
+    <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
+    <a href="#" data-theme="d" class="span2 offset2">Call Us Now</a>
+    <h1>Appointment Information</h1>
+    <a href="#" data-theme="d">Help</a>
+  </div>
+
+  <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
+        <input type="radio" name="appt5-switcher" id="appt5-bio" value="bio" checked="checked" />
+        <label for="appt5-bio">Doctor&rsquo;s Bio</label>
+
+        <input type="radio" name="appt5-switcher" id="appt5-maps" value="maps" />
+        <label for="appt5-maps">Maps &amp; Wayfinding</label>
+
+        <input type="radio" name="appt5-switcher" id="appt5-proc" value="proc" />
+        <label for="appt5-proc">Procedure Info</label>
+    </fieldset>
+  </div>
+  
+  <div data-role="content" id="appt5-bio-box" class="appt5-box">
+    <h2>Bio</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+  
+  <div data-role="content" id="appt5-maps-box" class="appt5-box">
+    <h2>Maps &amp; Wayfinding</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+
+  <div data-role="content" id="appt5-proc-box" class="appt5-box">
+    <h2>Procedure</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+</div>
+
+<div data-role="page" id="app-6">
+
+  <div data-role="header">
+    <a href="#" data-rel="back" data-theme="a">Destinations Program</a>
+    <a href="#" data-theme="d" class="span2 offset2">Call Us Now</a>
+    <h1>Appointment Information</h1>
+    <a href="#" data-theme="d">Help</a>
+  </div>
+
+  <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
+        <input type="radio" name="appt6-switcher" id="appt6-bio" value="bio" checked="checked" />
+        <label for="appt6-bio">Doctor&rsquo;s Bio</label>
+
+        <input type="radio" name="appt6-switcher" id="appt6-maps" value="maps" />
+        <label for="appt6-maps">Maps &amp; Wayfinding</label>
+
+        <input type="radio" name="appt6-switcher" id="appt6-proc" value="proc" />
+        <label for="appt6-proc">Procedure Info</label>
+    </fieldset>
+  </div>
+  
+  <div data-role="content" id="appt6-bio-box" class="appt6-box">
+    <h2>Bio</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+  
+  <div data-role="content" id="appt6-maps-box" class="appt6-box">
+    <h2>Maps &amp; Wayfinding</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+
+  <div data-role="content" id="appt6-proc-box" class="appt6-box">
+    <h2>Procedure</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+</div>
 <!-- END Deeper Appointment Screens -->
 
 <!-- START Help Popover -->
-<div class="popover">
+<div class="popover" id="help-popover">
     <div class="popover-content">
         <div class="arrow"><span></span></div>
         <div class="popover-body">
@@ -196,294 +693,19 @@
 
 
 <!-- START Call Us Screen -->
-<div data-role="page">
-	<div id="callus-container">
-		<div class="callus-prompt" id="callus-prompthead"></div>
-		<div class="callus-prompt" id="callus-promptbody">
-			<p>Would you like for us to give you a call now?</p>
-			<div id="prompt-buttons">
-				<a href="#" class="alert-button modalCloseImg simplemodal-close" id="callus-no">No, Thanks</a>
-				<a href="#" class="alert-button-lighter modalCloseImg simplemodal-close" id="callus-yes">Please Call Me</a>
-			</div>
-		</div>
-	</div>
+<div data-role="page" class="call-alert">
+  <div id="callus-container">
+    <div class="callus-prompt" id="callus-prompthead"></div>
+    <div class="callus-prompt" id="callus-promptbody">
+      <p>Would you like for us to give you a call now?</p>
+      <div id="prompt-buttons">
+        <a href="#" class="alert-button modalCloseImg simplemodal-close" id="callus-no">No, Thanks</a>
+        <a href="#" class="alert-button-lighter modalCloseImg simplemodal-close" id="callus-yes">Please Call Me</a>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- END -->
-
-<div data-role="page" id="allHelp"> 
-</div>
-<div data-role="page" id="appointment-1"> 
-</div>
-<div data-role="page" id="appointment-2"> 
-</div>
-<div data-role="page" id="appointment-3"> 
-</div>
-  
-<div data-role="page" id="formElements">
- 
-  <div data-role="header">
-    <h1>Form Elements</h1>
-    <a href="#" data-rel="back" data-theme="a">Back</a>
-  </div><!-- /header --> 
- 
-  <div data-role="content"> 
-    
-    <div data-role="fieldcontain">
-    
-      <label>Some Fields and Inputs:</label>
-      
-      <br /><br />
-  
-      <input type="range" />
-      
-      <br /><br />
-      
-      <input type="search" />
-      
-      <br /><br />
-      
-      <input type="email" />
-      
-      <br />
-    
-    </div>
-    
-    <div data-role="fieldcontain">
-      <label for="slider">Select slider:</label>
-      <select name="slider" id="slider" data-role="slider">
-        <option value="off">OFF</option>
-        <option value="on">ON</option>
-      </select> 
-    </div>
-    
-    <div data-role="fieldcontain">
-      <fieldset data-role="controlgroup" data-type="horizontal">
-          <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" />
-          <label for="radio-choice-1">All</label>
-
-          <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2" checked="checked" />
-          <label for="radio-choice-2">Today</label>
-
-          <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3"  />
-          <label for="radio-choice-3">Tomorrow</label>
-      </fieldset>
-    </div>
-    
-    <button disabled=>Inactive Button</button>
-    
-    <button>Active Button</button>
-  
-  </div>
-  
-</div>
-  
-<div data-role="page" id="listViews">
- 
-  <div data-role="header">
-    <h1>List Example</h1>
-    <a href="#" data-rel="back" data-theme="a">Back</a>
-  </div><!-- /header --> 
- 
-  <div data-role="content"> 
-    
-    <ul data-role="listview"> 
-      <li data-role="list-divider">Divider</li>
-      <li><a href="#">Anatomy of a page</a></li> 
-      <li><a href="#">Page transitions</a></li> 
-      <li><a href="#">Dialogs</a></li> 
-      <li><a href="#">Navigation: Ajax, hashes &amp; history</a></li> 
-      <li><a href="#">Link format examples</a></li> 
-      <li><a href="#">Theming pages</a></li>
-      <li><a href="#">Anatomy of a page</a></li> 
-      <li><a href="#">Page transitions</a></li> 
-      <li><a href="#">Dialogs</a></li> 
-      <li><a href="#">Navigation: Ajax, hashes &amp; history</a></li> 
-      <li><a href="#">Link format examples</a></li> 
-      <li><a href="#">Theming pages</a></li>
-      <li><a href="#">Anatomy of a page</a></li> 
-      <li><a href="#">Page transitions</a></li> 
-      <li><a href="#">Dialogs</a></li> 
-      <li><a href="#">Navigation: Ajax, hashes &amp; history</a></li> 
-      <li><a href="#">Link format examples</a></li> 
-      <li><a href="#">Theming pages</a></li>
-      <li><a href="#">Anatomy of a page</a></li> 
-      <li><a href="#">Page transitions</a></li> 
-      <li><a href="#">Dialogs</a></li> 
-      <li><a href="#">Navigation: Ajax, hashes &amp; history</a></li> 
-      <li><a href="#">Link format examples</a></li> 
-      <li><a href="#">Theming pages</a></li>
-    </ul> 
-    
-  </div>
-    
-</div>
-  
-<div data-role="page" id="headers"> 
- 
-  <div data-role="header">
-    <h1>Headers</h1>
-    <a href="#" data-rel="back" data-theme="a">Back</a>
-    </a>
-  </div><!-- /header --> 
- 
-  <div data-role="content"> 
-  
-    <p>
-      The default bar is the blue, but you can also use the black by specifying <em>data-theme="b"</em>.
-    </p>
-    
-    <div data-role="header" data-position="inline">
-      <a href="#" data-rel="back" data-theme="a">Back</a>
-      <h1>Blue Bar</h1>
-      <a href="#" data-theme="a">Button</a>
-    </div>
-    
-    <br />
-    
-    <div data-role="header" data-theme="b" data-position="inline">
-      <a href="#" data-rel="back" data-theme="b">Back</a>
-      <h1>Black Bar</h1>
-      <a href="#" data-theme="b">Button</a>
-    </div>
-  
-  </div>
-    
-</div>
-  
-<div data-role="page" id="headerButtons"> 
- 
-  <div data-role="header">
-    <h1>Header Buttons</h1>
-    <a href="#" data-rel="back" data-theme="a">Back</a>
-  </div><!-- /header --> 
- 
-  <div data-role="content"> 
-  
-    <p>
-      The various styled buttons you can place in a header:
-    </p>
-    
-    <div data-role="header" data-position="inline">
-      <h1>Page Title</h1>
-      <a href="#" data-theme="a">Edit</a>
-    </div>
-    
-    <br />
-    
-    <div data-role="header" data-position="inline">
-      <h1>Page Title</h1>
-      <a href="#" data-theme="b">Black</a>
-    </div>
-    
-    <br />
-    
-    <div data-role="header" data-position="inline">
-      <h1>Page Title</h1>
-      <a href="#" data-theme="c">Delete</a>
-    </div>
-    
-    <br />
-    
-    <div data-role="header" data-position="inline">
-      <h1>Page Title</h1>
-      <a href="#" data-theme="d">Done</a>
-    </div>
-    
-    <br />
-    
-    <div data-role="header" data-position="inline">
-      <h1>Page Title</h1>
-      <a href="#" data-rel="back" data-icon="arrow-l" data-theme="a">Back</a>
-    </div>
-    
-    <br />
-    
-    <div data-role="header" data-theme="b" data-position="inline">
-      <h1>Page Title</h1>
-      <a href="#" data-rel="back" data-icon="arrow-l" data-theme="b">Back</a>
-    </div>
-  
-  </div>
-    
-</div>
-
-<div data-role="page" id="allDialogExample"> 
- 
-  <div data-role="content"> 
-    <button data-theme="e">Button Style E</button>
-    <button data-theme="d">Button Style D</button>
-    <button data-theme="c">Button Style C</button>
-    <button data-theme="b">Button Style B</button>
-    <button data-theme="a">Button Style A</button>
-  </div>
-  
-</div>
-
-<div data-role="page" id="deleteDialogExample"> 
- 
-  <div data-role="content"> 
-    <button data-theme="e">Delete Draft</button>
-    <button data-theme="a">Save Draft</button>
-    <button data-theme="b">Cancel</button>
-  </div>
-  
-</div>
-
-<div data-role="page" id="postDialogExample"> 
- 
-  <div data-role="content"> 
-    <button data-theme="a">Post to Twitter</button>
-    <button data-theme="a">Post to Facebook</button>
-    <button data-theme="a">Post to YouTube</button>
-    <button data-theme="b">Cancel</button>
-  </div>
-  
-</div>
-  
-<div data-role="page" id="dialogs">
- 
-  <div data-role="header">
-    <h1>Dialogs</h1>
-    <a href="#" data-rel="back" data-theme="a">Back</a>
-  </div><!-- /header --> 
- 
-  <div data-role="content"> 
-  
-    <a href="#allDialogExample" data-role="button" data-rel="dialog" data-transition="slideup">All the options</a>
-  
-    <a href="#deleteDialogExample" data-role="button" data-rel="dialog" data-transition="slideup">Delete Example</a>
-  
-    <a href="#postDialogExample" data-role="button" data-rel="dialog" data-transition="slideup">Post Something</a>
-  
-  </div>
-    
-</div>
-  
-<div data-role="page" id="footerTabs" data-theme="b">
- 
-  <div data-role="header">
-    <h1>Footer Tabs</h1>
-    <a href="#" data-rel="back">Back</a>
-  </div><!-- /header --> 
- 
-  <div data-role="content"> 
-  
-    Icons by Joseph Wain / <a href="http://www.glyphish.com" target="_blank">glyphish.com</a>. Licensed under the <a href="http://creativecommons.org/licenses/by/3.0/us/" target="_blank">Creative Commons Attribution 3.0 United States License</a>.
-  
-  </div>
-  
-  <div data-role="footer" data-position="fixed">
-    <div data-role="navbar">
-      <ul>
-        <li><a href="#" id="tabA" data-icon="custom">One</a></li>
-        <li><a href="#" id="tabB" data-icon="custom" class="ui-btn-active">Two</a></li>
-        <li><a href="#" id="tabC" data-icon="custom">Three</a></li>
-      </ul>
-    </div><!-- /navbar -->
-  </div><!-- /footer -->
-    
-</div>
- 
 
 </body> 
 </html> 

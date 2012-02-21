@@ -1,34 +1,48 @@
-$(document).ready(function() {
-	// Home Calendar Content Switcher
-	$("#home-screen :radio[name=cal-switcher]").change(function() {
-		$("div.cal-box").hide();
-		$("#cal-" + $(this).val() + "-box").show();
-	});
+// Simple state machine to let us change/filter pages.
+var APP = {
+  prev: 'null',
+  page: '#home-screen',
+  control: 'today'
+};
 
-	// Appointment 1 Content Switcher
-	$("#bio-1 :radio[name=appt1-switcher]").change(function() {
-		$("div.appt1-box").hide();
-		$("#appt1-" + $(this).val() + "-box").show();
-	});
+function setUpPage() {
+  // Event handlers for page change links.
+  $('div.call-alert').hide();
 
-	// Appointment 2 Content Switcher
-	$("#bio-2 :radio[name=appt2-switcher]").change(function() {
-		$("div.appt2-box").hide();
-		$("#appt2-" + $(this).val() + "-box").show();
-	});
+  $('a.page').tap(function() {
+    APP.control = $(this).attr('class').split(' ')[1]
+    APP.page = $(this).attr('href');
+  });
 
-	// Pre-trigger segmented control filtering
-	$("#home-screen :radio[name=cal-switcher]").trigger('change');
-	$("#bio-1 :radio[name=appt1-switcher]").trigger('change');
-	$("#bio-2 :radio[name=appt2-switcher]").trigger('change');	
+  // Event handler for radio buttons.
+  $('input[type="radio"]').change(function() {
+    APP.control = $(this).val();
+    $('div[data-role="content"]').hide();
+    $('div[id*=' + APP.control + ']').show();
+  });
 
-	// Call us Button
-	$('a.callus-button').click(function() {
-		$('#callus-container').modal();
-	});
-	
-	// Help Button Trigger Popover
-	$('a.help-button').click(function () {  
-		$('div.popover').fadeToggle("fast", "linear");
-	});
-});
+  // Call us Button
+  $('a.callus-button').tap(function() {
+    $('#callus-container').modal();
+  });
+  
+  // Help Button Trigger Popover
+  $('a.help-button').tap(function () { 
+    $('div.popover').fadeToggle("fast", "linear");
+    $('*').not('a').not('.ui-bar-a').not('.ui-btn-text').one('tap', function(ev) {
+      ev.stopPropagation();
+      $('div.popover').fadeOut('fast', 'linear');
+    });
+
+  });
+
+  $(".ui-dialog button").live("click", function() { $("[data-role='dialog']").dialog("close"); });
+
+
+  $('input[value="' + APP.control + '"]').trigger('change');
+
+  $('div[data-role="content"]').hide();
+    $('div[id*=' + APP.control + ']').show();
+}
+
+$('div[data-role="page"]').live('pageinit', setUpPage);

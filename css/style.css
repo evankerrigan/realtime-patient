@@ -231,3 +231,20 @@
 	background-clip: padding-box;
 	height: 140px;
 }
+
+.loc-info {
+	padding-top: 27px;
+}
+.procedure-info {
+	padding-top: 15px;
+}
+.procedure-info p{
+	overflow: visible;
+}
+.doc-info {
+	text-align: right;
+}
+.doc-info caption {
+	display: block;
+	font-size: 12px;
+}
