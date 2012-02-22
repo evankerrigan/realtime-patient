@@ -33,17 +33,22 @@
 .learn-more	{ float: right; text-align: right }
 .learn-more a { text-decoration: none !important }
 
-
-
-#subject-amy { margin-top: 1em; background: #fff url('../img/doctors/amy.jpg') no-repeat left top }
-
-
-
-#subject-biopsy { margin-top: 1em; background: #fff url('../img/equipment/biopsy.jpg') no-repeat left top }
-
 .subject-map {width: 425px; height: 145px; float: left; background: #fff url('../img/maps/map.jpg') no-repeat left top }
 
+#subject-amy { margin-top: 1em; background: #fff url('../img/doctors/amy.jpg') no-repeat left top }
+#subject-bryant { margin-top: 1em; background: #fff url('../img/doctors/bryant.jpg') no-repeat left top }
+#subject-donna { margin-top: 1em; background: #fff url('../img/doctors/donna.jpg') no-repeat left top }
+#subject-heather { margin-top: 1em; background: #fff url('../img/doctors/heather.jpg') no-repeat left top }
+#subject-james { margin-top: 1em; background: #fff url('../img/doctors/james.jpg') no-repeat left top }
+#subject-kenneth { margin-top: 1em; background: #fff url('../img/doctors/kenneth.jpg') no-repeat left top }
+#subject-ron { margin-top: 1em; background: #fff url('../img/doctors/ronald.jpg') no-repeat left top }
 
+#subject-bloodtest { margin-top: 1em; background: #fff url('../img/equipment/bloodtest.jpg') no-repeat left top }
+#subject-biopsy { margin-top: 1em; background: #fff url('../img/equipment/biopsy.jpg') no-repeat left top }
+#subject-mri { margin-top: 1em; background: #fff url('../img/equipment/mri.jpg') no-repeat left top }
+#subject-sonogram { margin-top: 1em; background: #fff url('../img/equipment/sonogram.jpg') no-repeat left top }
+#subject-stethoscope { margin-top: 1em; background: #fff url('../img/equipment/stethoscope.jpg') no-repeat left top }
+#subject-xray { margin-top: 1em; background: #fff url('../img/equipment/xray.jpg') no-repeat left top }
 
 
 /* FEEDBACK REVIEW STYLING */
