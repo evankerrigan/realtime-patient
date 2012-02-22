@@ -1,5 +1,5 @@
 .segment-control { margin: 0 auto !important }
-.home-descript { width: 490px !important; white-space: normal !important; font-size: 14px; line-height: 19px}
+.home-descript { width: 618px !important; white-space: normal !important; font-size: 14px; line-height: 19px}
 .procedure-info h1 { margin-bottom: 14px }
 .cal-box a {color: #2F3E46 !important; text-decoration: none; cursor: pointer }
 .doc-info { margin-top: 16px }
@@ -27,14 +27,12 @@
 	opacity: .25 !important;
 }
 
-.feedback-container { width: 424px; white-space: normal; margin-left: 2.5em}
-.procedure-info h2 { width: 490px !important; white-space: normal !important; text-align: center; color: #2F3E46 !important; margin-bottom: 1.8em }
+.feedback-container { width: 618px; white-space: normal; margin-left: 50%}
+.procedure-info h2 { width: 618px !important; white-space: normal !important; text-align: center; color: #2F3E46 !important; margin-bottom: 1.8em }
 
 .feedback-container a { color: #fff !important }
 
-.feedback-button {   
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#464972), color-stop(50%,#212555));
-	background: -moz-linear-gradient(center top, #464972 50%, #212555 50%);
+.feedback-button {
 	-webkit-box-shadow: 1px 1px 1px 0px #3f426d;
 	-moz-box-shadow: 1px 1px 1px 0px #3f426d;
 	box-shadow: 1px 1px 1px 0px #3f426d;
@@ -63,8 +61,17 @@
 	margin-right: 1.5em;
 }
 
+.feedback-well:hover, .feedback-well:focus, .feedback-well:active { 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#7DBE0E), color-stop(50%,#A1D54E));
+	margin-right: 1.5em;
+}
+
 .feedback-notwell { 
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#F65B40), color-stop(50%,#E83726));
+}
+
+.feedback-notwell:hover, .feedback-notwell:focus, .feedback-notwell:active { 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#E83726), color-stop(50%,#F65B40));
 }
 
 
@@ -194,9 +201,9 @@
 
 #callus-container a[title='Close'] { visibility: hidden }
 #callus-promptbody { position: relative !important; margin: 17px auto 0 !important; padding: 0.95em !important }
-#prompt-buttons a { float: left; width: 45% !important; color: #fff !important; text-decoration: none !important }
+.prompt-buttons a { float: left; width: 45% !important; color: #fff !important; text-decoration: none !important }
 #callus-promptbody p, #callus-prompthead .ui-title, #callus-promptbody .ui-btn-text { color: #fff !important; text-shadow: 0 1px 0 #4C596A; text-align: center }
-#callus-promptbody #prompt-buttons { margin: 0 auto; width: 98% }
+#callus-promptbody .prompt-buttons { margin: 0 auto; width: 98% }
 #callus-no { margin-right: 1em; margin-left: 0.75em }
 #callus-promptbody { padding-top: 0 !important; margin-top: -16px !important}
 
@@ -233,7 +240,7 @@
 	background-clip: padding-box;
 }
 
-#prompt-buttons { margin-top: 22px; }
+.prompt-buttons { margin-top: 22px; }
 
 .alert-button {   
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#464972), color-stop(50%,#212555));
@@ -302,6 +309,73 @@
 	background-clip: padding-box;
 	height: 140px;
 }
+
+
+
+
+
+/* Feedback Prompts Overrides */
+
+#feedback-container {
+	position: fixed;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	opacity: 0.9;
+	max-width: 100% !important;
+	background: #162344 !important;
+ 	border: 2px solid #dfe1e6;
+	-moz-border-radius: .6em;
+	-webkit-border-radius: .6em;
+	border-radius: .6em
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+	height: 140px;
+}
+
+#feedback-container a[title='Close'] { visibility: hidden }
+#feedback-promptbody { position: relative !important; margin: 17px auto 0 !important; padding: 0.95em !important }
+.prompt-buttons a { float: left; width: 45% !important; color: #fff !important; text-decoration: none !important }
+#feedback-promptbody p, #feedback-prompthead .ui-title, #feedback-promptbody .ui-btn-text { color: #fff !important; text-shadow: 0 1px 0 #4C596A; text-align: center }
+#feedback-promptbody .prompt-buttons { margin: 0 auto; width: 98% }
+#fbprompt-type { margin-right: 1em; margin-left: 0.75em }
+#feedback-promptbody { padding-top: 0 !important; margin-top: -16px !important}
+
+#feedback-prompthead {
+	background-color: #162344 !important;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5d667d), color-stop(90%,#3a4561)) !important;
+	width: 100%;
+	height: 40px;
+	overflow: hidden;
+	position: relative;
+	z-index: 5;
+	border-top-right-radius: .6em;
+	border-top-left-radius: .6em;
+	border-bottom-right-radius: 170px 20px;
+	border-bottom-left-radius: 170px 20px;
+	margin-right: 0 !important;
+	padding: 0 !important;
+	top: 0px;
+	color: #fff;
+	text-shadow: 0px -1px 1px #37363c;
+}
+
+#feedback-promptbody {
+	-moz-border-radius-bottomleft: .6em;
+	-webkit-border-bottom-left-radius: .6em;
+	border-bottom-left-radius: .6em;
+	
+	-moz-border-radius-bottomright: .6em;
+	-webkit-border-bottom-right-radius: .6em;
+	border-bottom-right-radius: .6em;
+
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+
+/* MISC */
+
 
 .loc-info {
 	padding-top: 27px;

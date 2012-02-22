@@ -21,6 +21,8 @@
     function setUpPage() {
       $('div.call-alert').hide();
 
+		$('div.feedback-alert').hide();
+
       // Event handler for page change links.
       $('a.page').tap(function() {
         APP.control = $(this).attr('class').split(' ')[1]
@@ -37,6 +39,11 @@
       // Call us Button
       $('a.callus-button').tap(function() {
         $('#callus-container').modal();
+      });
+
+      // Call us Button
+      $('a.feedback-button').tap(function() {
+        $('#feedback-container').modal();
       });
       
       // Help Button Trigger Popover
@@ -736,7 +743,22 @@
     </div>
   </div>
 </div>
-<!-- END -->
+<!-- END Call Us Screen-->
+
+
+<!-- START Feedback Screen -->
+<div class="feedback-alert">
+  <div id="feedback-container">
+    <div class="feedback-prompt" id="feedback-prompthead"></div>
+    <div class="feedback-prompt" id="feedback-promptbody">
+      <p>Would you like to type or record your response?</p>
+      <div class="prompt-buttons">
+        <a href="#" class="alert-button modalCloseImg simplemodal-close" id="fbprompt-type">Type</a>
+        <a href="#" class="alert-button-lighter modalCloseImg simplemodal-close" id="fbprompt-record">Record</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body> 
 </html> 
