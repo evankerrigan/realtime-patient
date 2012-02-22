@@ -12,32 +12,32 @@
   <script src="js/jquery.mobile.min.js"></script>
   <script src="js/jquery.simplemodal.js"></script>
   <script>
-    // Simple state machine to let us change/filter pages.
-    var APP = {
-      page: '#home-screen',
-      control: 'today'
-    };
 
-    function setUpPage() {
-      $('div.call-alert').hide();
-
-		$('div.feedback-alert').hide();
-
-      // Event handler for page change links.
-      $('a.page').tap(function() {
-        APP.control = $(this).attr('class').split(' ')[1]
-        APP.page = $(this).attr('href');
-      });
+    function setUpPage(ev, ui) {
+      console.log(ev);
+      var $page  = $(this),
+          pageID = '#' + $(this).attr('id'),
+          $radio = $(pageID + ' input[type="radio"]'),
+          filter = $(pageID + ' input[checked="checked"]').attr('value');
+          
+      $page.data('segControl', filter);
 
       // Event handler for radio buttons.
-      $('input[type="radio"]').change(function() {
-        APP.control = $(this).val();
+      $radio.change(function() {
+        $page.data('segControl', $(this).val());
+
         $('div[data-role="content"]').hide();
-        $('div[id*=' + APP.control + ']').show();
+
+        $('div[id*=' + $page.data('segControl') + ']').show();
+        $page.trigger('updatelayout');
+      });
+
+      $(pageID + ' a[data-rel="back"]').tap(function() {
+        $('#home-screen').trigger('pagechange');
       });
 
       // Call us Button
-      $('a.callus-button').tap(function() {
+      $(pageID + ' a.callus-button').tap(function() {
         $('#callus-container').modal();
       });
 
@@ -47,8 +47,9 @@
       });
       
       // Help Button Trigger Popover
-      $('a.help-button').tap(function () { 
+      $(pageID + ' a.help-button').tap(function () { 
         $('div.popover').fadeToggle("fast", "linear");
+        
         $('*').not('a').not('.ui-bar-a').not('.ui-btn-text').one('tap', function(ev) {
           ev.stopPropagation();
           $('div.popover').fadeOut('fast', 'linear');
@@ -56,23 +57,20 @@
 
       });
 
-      // Back button fix
-      $('a[data-rel="back"]').click(function() {
-        APP.page = '#home-screen';
-        APP.control = 'today';
-      });
-
       $(".ui-dialog button").live("click", function() { $("[data-role='dialog']").dialog("close"); });
 
-      $('div[data-role="page"]').hide();
-      $(APP.page).show();
+      $('div[data-role="page"]').not(this).hide();
+      $page.show();
+      $('div.call-alert').hide();
       $('div[data-role="content"]').hide();
-      $('div[id*=' + APP.control + ']').show();
 
-      $('input[value="' + APP.control + '"]').trigger('change');
+      $(pageID + ' div[id*=' + $page.data('segControl') + ']').show();
+      $(pageID + ' input[value="' + $page.data('segControl') + '"]').trigger('change');
     }
 
     $('div[data-role="page"]').live('pageinit', setUpPage);
+    $('div[data-role="page"]').live('pagechange', setUpPage);
+    $('div[data-role="page"]').live('pageshow', setUpPage);
   </script>
 </head> 
 <body> 
