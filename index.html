@@ -14,6 +14,7 @@
   <script>
 
     function setUpPage(ev, ui) {
+      console.log(ev);
       var $page  = $(this),
           pageID = '#' + $(this).attr('id'),
           $radio = $(pageID + ' input[type="radio"]'),
@@ -28,20 +29,20 @@
         $('div[data-role="content"]').hide();
 
         $('div[id*=' + $page.data('segControl') + ']').show();
+        $page.trigger('updatelayout');
       });
 
-      //$('a[data-rel="back"]').tap(function() {
-        //$('#home-screen').trigger('pageinit');
-        //console.log('here');
-      //});
+      $(pageID + ' a[data-rel="back"]').tap(function() {
+        $('#home-screen').trigger('pagechange');
+      });
 
       // Call us Button
-      $('a.callus-button').tap(function() {
+      $(pageID + ' a.callus-button').tap(function() {
         $('#callus-container').modal();
       });
       
       // Help Button Trigger Popover
-      $('a.help-button').tap(function () { 
+      $(pageID + ' a.help-button').tap(function () { 
         $('div.popover').fadeToggle("fast", "linear");
         
         $('*').not('a').not('.ui-bar-a').not('.ui-btn-text').one('tap', function(ev) {
@@ -53,7 +54,7 @@
 
       $(".ui-dialog button").live("click", function() { $("[data-role='dialog']").dialog("close"); });
 
-      $('div[data-role="page"]').hide();
+      $('div[data-role="page"]').not(this).hide();
       $page.show();
       $('div.call-alert').hide();
       $('div[data-role="content"]').hide();
