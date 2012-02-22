@@ -21,6 +21,31 @@
 .appt-land div[data-role='fieldcontain'] { margin-top: 48px }
 
 
+
+/* APPOINTMENT INFO PAGE STYLING */
+
+.subject-image { width: 316px; height: 316px; float: left; padding-bottom: 1em } 
+
+.subject-text { float: left; margin-left: 24px }
+	.subject-text h1 { margin-bottom: 27px}
+	.subject-text p { margin-bottom: 19px }
+
+.learn-more	{ float: right; text-align: right }
+.learn-more a { text-decoration: none !important }
+
+
+
+#subject-amy { margin-top: 1em; background: #fff url('../img/doctors/amy.jpg') no-repeat left top }
+
+
+
+#subject-biopsy { margin-top: 1em; background: #fff url('../img/equipment/biopsy.jpg') no-repeat left top }
+
+.subject-map {width: 425px; height: 145px; float: left; background: #fff url('../img/maps/map.jpg') no-repeat left top }
+
+
+
+
 /* FEEDBACK REVIEW STYLING */
 .needs-review {
 	background-color: #fff !important;
@@ -73,8 +98,6 @@
 .feedback-notwell:hover, .feedback-notwell:focus, .feedback-notwell:active { 
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#E83726), color-stop(50%,#F65B40));
 }
-
-
 
 
 /* Popover Styling */
@@ -264,6 +287,9 @@
 	text-align: center;
 	font-size: 14px;
 	font-weight: bold;
+	color: #fff !important;
+	text-decoration: none;
+	width: 45% !important;
 }
 
 .alert-button:active {
@@ -294,6 +320,9 @@
 	text-align: center;
 	font-size: 14px;
 	font-weight: bold;
+	color: #fff !important;
+	text-decoration: none;
+	width: 45% !important;
 }
 
 #callus-container { 
@@ -337,7 +366,7 @@
 .prompt-buttons a { float: left; width: 45% !important; color: #fff !important; text-decoration: none !important }
 #feedback-promptbody p, #feedback-prompthead .ui-title, #feedback-promptbody .ui-btn-text { color: #fff !important; text-shadow: 0 1px 0 #4C596A; text-align: center }
 #feedback-promptbody .prompt-buttons { margin: 0 auto; width: 98% }
-#fbprompt-type { margin-right: 1em; margin-left: 0.75em }
+#fbprompt-tellmore { margin-right: 1em; margin-left: 0.75em }
 #feedback-promptbody { padding-top: 0 !important; margin-top: -16px !important}
 
 #feedback-prompthead {
