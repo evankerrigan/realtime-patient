@@ -14,7 +14,6 @@
   <script>
 
     function setUpPage(ev, ui) {
-      console.log(ev);
       var $page  = $(this),
           pageID = '#' + $(this).attr('id'),
           $radio = $(pageID + ' input[type="radio"]'),
@@ -47,12 +46,14 @@
       });
       
       // Help Button Trigger Popover
-      $('a.help-button').tap(function() { 
+      $('a.help-button').tap(function(ev1) { 
+        ev1.stopPropagation();
         var $el = $('div.popover');
         $el.fadeIn("fast", "linear");
         
-        $('*').one('tap', function(ev) {
+        $('*').bind('tap.helpclose', function(ev) {
           ev.stopPropagation();
+          $(this).unbind('tap.helpclose');
           $el.fadeOut("fast", "linear");
         });
 
