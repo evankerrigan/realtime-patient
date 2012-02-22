@@ -2,7 +2,7 @@
 <html> 
   <head> 
   <meta charset="utf-8" /> 
-  <title>Destinations Program</title> 
+  <title>MiConcierge</title> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="stylesheet" href="css/jquery.mobile.min.css"> 
@@ -70,11 +70,18 @@
 </head> 
 <body> 
 
+	<!--
+	   		##########################
+				START Home Page Permutations
+	   		##########################
+	-->
+	
+
 <div data-role="page" id="home-screen"> 
 
   <div data-role="header"> 
     <a href="#" data-inline="true" data-rel="dialog" data-transition="pop" data-theme="d" class="callus-button">Call Us Now</a>
-    <h1>Destinations Program</h1>
+    <h1>MiConcierge</h1>
     <a href="#" data-theme="d" class="help-button">Help</a>
   </div><!-- /header --> 
 
@@ -91,31 +98,32 @@
     </fieldset>
   </div>
 
+	<!-- START TOMORROW -->
+
   <div data-role="content" id="cal-tomorrow-box" class="cal-box tomorrow">
-    <p>Hello, Nathan Bowman! You have <strong>three appointments tomorrow</strong>.</p>
+    <p class="patient-welcome">Hello, Nathan Bowman! You have <strong>two appointments tomorrow</strong>.</p>
     <ul data-role="listview" data-inset="true"> 
       <li>
         <div class="ui-grid-d">
           <div class="ui-block-a loc-info">
             <a href="#app-4" class="page maps">
-              <h1>08:30 AM</h1>
-              <p>Building A, Room 2345</p>
+              <h1>09:00 AM</h1>
+              <p>Building B, Radiology Lab 1</p>
             </a>
           </div>
-          <div class="ui-block-b procedure-info">
+          
+			<div class="ui-block-b procedure-info">
             <a href="#app-4" class="page proc">
-              <h1>Full-Body Physical</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <h1>MRI &amp; Radiology</h1>
+              <p class="home-descript">A radiologist will use an MRI to take images of your body. This is a painless procedure; however, you will be asked to maintain the same position for long periods of time as well as to remain relatively still to optimize the image. Afterward, the radiologist will process the images and your physician will review the results and consult with you and answer your questions.</p>
             </a>
           </div>
           <div class="ui-block-c"></div>
           <div class="ui-block-d"></div>
           <div class="ui-block-e doc-info">
             <a href="#app-4" class="page bio">
-              <div><img src="img/doc1_thumb.jpg" /></div>
-              <div><caption>Dr. William Gordon</caption></div>
+              <div class="doc-caption"><caption>Dr. Donna Burch</caption></div>
+              <div><img src="img/doctors/donna_thumb.jpg" width="79" height="79" /></div>
             </a>
           </div>
         </div>
@@ -124,59 +132,35 @@
         <div class="ui-grid-d">
           <div class="ui-block-a loc-info">
             <a href="#app-5" class="page maps">
-              <h1>08:30 AM</h1>
-              <p>Building A, Room 2345</p>
+              <h1>12:00 PM</h1>
+              <p>Building B, Radiology Lab 2</p>
             </a>
           </div>
           <div class="ui-block-b procedure-info">
             <a href="#app-5" class="page proc">
-              <h1>What the what</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <h1>Sonogram &amp; Radiology</h1>
+              <p class="home-descript">A radiologist will use a sonogram to take images of your internal organs. This is a painless procedure; however, you may be asked to maintain the same position as well as to remain relatively still to optimize the image. Afterward, the radiologist will process the images and your physician will review the results and consult with you and answer your questions.</p>
             </a>
           </div>
           <div class="ui-block-c"></div>
           <div class="ui-block-d"></div>
           <div class="ui-block-e doc-info">
             <a href="#app-5" class="page bio">
-              <div><img src="img/doc2_thumb.jpg" /></div>
-              <div><caption>Dr. Linda Sanchez</caption></div>
-            </a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="ui-grid-d">
-          <div class="ui-block-a loc-info">
-            <a href="#app-6" class="page maps">
-              <h1>08:30 AM</h1>
-              <p>Building A, Room 2345</p>
-            </a>
-          </div>
-          <div class="ui-block-b procedure-info">
-            <a href="#app-6" class="page proc">
-              <h1>Another title</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-            </a>
-          </div>
-          <div class="ui-block-c"></div>
-          <div class="ui-block-d"></div>
-          <div class="ui-block-e doc-info">
-            <a href="#app-6" class="page bio">
-              <div><img src="img/doc3_thumb.jpg" /></div>
-              <div><caption>Dr. Jeff Thompson</caption></div>
+              <div class="doc-caption"><caption>Dr. Jim Coleman</caption></div>
+              <div><img src="img/doctors/james_thumb.jpg" width="79" height="79"/></div>
             </a>
           </div>
         </div>
       </li>
     </ul>
   </div>
-  
+
+	<!-- END TOMORROW -->
+	
+	<!-- START TODAY -->
+ 
   <div data-role="content" id="cal-today-box" class="cal-box today">
-    <p>Hello, Nathan Bowman! You have <strong>three appointments today</strong>.</p>
+    <p class="patient-welcome">Hello, Nathan Bowman! You have <strong>three appointments today</strong>.</p>
     <ul data-role="listview" data-inset="true"> 
       <li>
         <div class="ui-grid-d">
@@ -187,19 +171,17 @@
             </a>
           </div>
           <div class="ui-block-b procedure-info">
-            <a href="#app-1" class="page proc">
-              <h1>Full-Body Physical</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-            </a>
+				<a href="#app-1" class="page proc">
+					<h1>Biopsy</h1>
+					<p class="home-descript">A minor surgical incision will be made to take a sample of your body tissues for further analysis. You may experience some  discomfort or pain during the procedure; however, the process is not too long. Afterward which your physician will review your results with you and answer any questions that you might have.</p>
+				</a>
           </div>
           <div class="ui-block-c"></div>
           <div class="ui-block-d"></div>
           <div class="ui-block-e doc-info">
             <a href="#app-1" class="page bio">
-              <div><img src="img/doc1_thumb.jpg" /></div>
-              <div><caption>Dr. William Gordon</caption></div>
+              <div class="doc-caption"><caption>Dr. Amy Lin</caption></div>
+              <div><img src="img/doctors/amy_thumb.jpg" width="79" height="79" /></div>
             </a>
           </div>
         </div>
@@ -208,24 +190,22 @@
         <div class="ui-grid-d">
           <div class="ui-block-a loc-info">
             <a href="#app-2" class="page maps">
-              <h1>08:30 AM</h1>
-              <p>Building A, Room 2345</p>
+              <h1>11:30 AM</h1>
+              <p>Building B, Room 3627</p>
             </a>
           </div>
           <div class="ui-block-b procedure-info">
             <a href="#app-2" class="page proc">
-              <h1>What the what</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <h1>Blood Test Battery (II)</h1>
+              <p class="home-descript">Once again, a nurse will draw several vials of blood that will undergo a battery of tests. While you may experience some minor discomfort during the procedure, the process is very quick. Your blood samples will be sent away for analysis and compared to yesterday&rsquo;s samples, after which your physician will review your results with you and answer any questions that you might have.</p>
             </a>
           </div>
           <div class="ui-block-c"></div>
           <div class="ui-block-d"></div>
           <div class="ui-block-e doc-info">
             <a href="#app-2" class="page bio">
-              <div><img src="img/doc2_thumb.jpg" /></div>
-              <div><caption>Dr. Linda Sanchez</caption></div>
+              <div class="doc-caption"><caption>Dr. Ron Altus</caption></div>
+              <div><img src="img/doctors/ronald_thumb.jpg" width="79" height="79" /></div>
             </a>
           </div>
         </div>
@@ -234,57 +214,57 @@
         <div class="ui-grid-d">
           <div class="ui-block-a loc-info">
             <a href="#app-3" class="page maps">
-              <h1>08:30 AM</h1>
-              <p>Building A, Room 2345</p>
+              <h1>3:00 PM</h1>
+              <p>Building A, Room 4218</p>
             </a>
           </div>
           <div class="ui-block-b procedure-info">
             <a href="#app-3" class="page proc">
-              <h1>Another title</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <h1>X-Ray &amp; Radiology</h1>
+              <p class="home-descript">A radiologist will use an X-Ray machine to take several images of your internal organs. This is a painless procedure; however, the radiologist may ask you to move yourself in various positions to optimize the image. Afterward, the radiologist will process the images and your physician will review the results and consult with you and answer any questions that you might have.</p>
             </a>
           </div>
           <div class="ui-block-c"></div>
           <div class="ui-block-d"></div>
           <div class="ui-block-e doc-info">
             <a href="#app-3" class="page bio">
-              <div><img src="img/doc3_thumb.jpg" /></div>
-              <div><caption>Dr. Jeff Thompson</caption></div>
+              <div class="doc-caption"><caption>Dr. Bryant Davis</caption></div>
+              <div><img src="img/doctors/bryant_thumb.jpg" width="79" height="79" /></div>
             </a>
           </div>
         </div>
       </li>
     </ul>
   </div>
-  
+
+	<!-- END TODAY -->
+	
+	<!-- START ALL -->
+
   <div data-role="content" id="cal-all-box" class="cal-box all">
-    <p>Hello, Nathan Bowman! You have <strong>nine total appointments</strong>.</p>
+    <p class="patient-welcome">Hello, Nathan Bowman! You have <strong>seven total appointments</strong>.</p>
     <ul data-role="listview" data-inset="true"> 
       <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-b ui-btn-up-undefined">Yesterday</li>
       <li>
         <div class="ui-grid-d">
           <div class="ui-block-a loc-info">
-            <a href="#bio-1">
-              <h1>08:30 AM</h1>
+            <a href="#app-6">
+              <h1>11:30 AM</h1>
               <p>Building A, Room 2345</p>
             </a>
           </div>
           <div class="ui-block-b procedure-info">
-            <a href="#bio-1">
+            <a href="#app-6">
               <h1>Full-Body Physical</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+              <p class="home-descript">During this appointment, you will meet with a nurse and your physician to run some initial tests and review your medical history. It is likely that they will run a few initial tests to get a better understanding of your current state of health that will inform the next several rounds of your appointments. Please feel free to ask them any questions that you might have</p>
             </a>
           </div>
           <div class="ui-block-c"></div>
           <div class="ui-block-d"></div>
           <div class="ui-block-e doc-info">
-            <a href="#bio-1">
-              <div><img src="img/doc1_thumb.jpg" /></div>
-              <div><caption>Dr. William Gordon</caption></div>
+            <a href="#app-6">
+              <div class="doc-caption"><caption>Dr. Heather Platz</caption></div>
+              <div><img src="img/doctors/heather_thumb.jpg" width="79" height="79" /></div>
             </a>
           </div>
         </div>
@@ -292,51 +272,23 @@
       <li>
         <div class="ui-grid-d">
           <div class="ui-block-a loc-info">
-            <a href="#bio-2">
+            <a href="#app-7">
               <h1>08:30 AM</h1>
               <p>Building A, Room 2345</p>
             </a>
           </div>
           <div class="ui-block-b procedure-info">
-            <a href="#bio-2">
-              <h1>What the what</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            <a href="#app-7">
+              <h1>Blood Test Battery (I)</h1>
+              <p class="home-descript">A nurse will draw several vials of blood that will undergo a battery of tests. While you may experience some minor discomfort during the procedure, the process is very quick. Your blood samples will be sent away for analysis, after which your physician will review your results with you and answer any questions that you might have.</p>
             </a>
           </div>
           <div class="ui-block-c"></div>
           <div class="ui-block-d"></div>
           <div class="ui-block-e doc-info">
-            <a href="#bio-2">
-              <div><img src="img/doc2_thumb.jpg" /></div>
-              <div><caption>Dr. Linda Sanchez</caption></div>
-            </a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="ui-grid-d">
-          <div class="ui-block-a loc-info">
-            <a href="#bio-3">
-              <h1>08:30 AM</h1>
-              <p>Building A, Room 2345</p>
-            </a>
-          </div>
-          <div class="ui-block-b procedure-info">
-            <a href="#bio-3">
-              <h1>Another title</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-            </a>
-          </div>
-          <div class="ui-block-c"></div>
-          <div class="ui-block-d"></div>
-          <div class="ui-block-e doc-info">
-            <a href="#bio-3">
-              <div><img src="img/doc3_thumb.jpg" /></div>
-              <div><caption>Dr. Jeff Thompson</caption></div>
+            <a href="#app-7">
+              <div class="doc-caption"><caption>Dr. Kenneth Graham</caption></div>
+              <div><img src="img/doctors/kenneth_thumb.jpg" width="79" height="79" /></div>
             </a>
           </div>
         </div>
@@ -345,25 +297,23 @@
       <li>
         <div class="ui-grid-d">
           <div class="ui-block-a loc-info">
-            <a href="#bio-1">
+            <a href="#app-1" class="page maps">
               <h1>08:30 AM</h1>
               <p>Building A, Room 2345</p>
             </a>
           </div>
           <div class="ui-block-b procedure-info">
-            <a href="#bio-1">
-              <h1>Full-Body Physical</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-            </a>
+				<a href="#app-1" class="page proc">
+					<h1>Biopsy</h1>
+					<p class="home-descript">A minor surgical incision will be made to take a sample of your body tissues for further analysis. You may experience some  discomfort or pain during the procedure; however, the process is not too long. Afterward which your physician will review your results with you and answer any questions that you might have.</p>
+				</a>
           </div>
           <div class="ui-block-c"></div>
           <div class="ui-block-d"></div>
           <div class="ui-block-e doc-info">
-            <a href="#bio-1">
-              <div><img src="img/doc1_thumb.jpg" /></div>
-              <div><caption>Dr. William Gordon</caption></div>
+            <a href="#app-1" class="page bio">
+              <div class="doc-caption"><caption>Dr. Amy Lin</caption></div>
+              <div><img src="img/doctors/amy_thumb.jpg" width="79" height="79" /></div>
             </a>
           </div>
         </div>
@@ -371,25 +321,23 @@
       <li>
         <div class="ui-grid-d">
           <div class="ui-block-a loc-info">
-            <a href="#bio-1">
-              <h1>08:30 AM</h1>
-              <p>Building A, Room 2345</p>
+            <a href="#app-2" class="page maps">
+              <h1>11:30 AM</h1>
+              <p>Building B, Room 3627</p>
             </a>
           </div>
           <div class="ui-block-b procedure-info">
-            <a href="#bio-1">
-              <h1>What the what</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            <a href="#app-2" class="page proc">
+              <h1>Blood Test Battery (II)</h1>
+              <p class="home-descript">Once again, a nurse will draw several vials of blood that will undergo a battery of tests. While you may experience some minor discomfort during the procedure, the process is very quick. Your blood samples will be sent away for analysis and compared to your previous sample, after which your physician will review your results with you and answer any questions that you might have.</p>
             </a>
           </div>
           <div class="ui-block-c"></div>
           <div class="ui-block-d"></div>
           <div class="ui-block-e doc-info">
-            <a href="#bio-1">
-              <div><img src="img/doc2_thumb.jpg" /></div>
-              <div><caption>Dr. Linda Sanchez</caption></div>
+            <a href="#app-2" class="page bio">
+              <div class="doc-caption"><caption>Dr. Ron Altus</caption></div>
+              <div><img src="img/doctors/ronald_thumb.jpg" width="79" height="79" /></div>
             </a>
           </div>
         </div>
@@ -397,25 +345,23 @@
       <li>
         <div class="ui-grid-d">
           <div class="ui-block-a loc-info">
-            <a href="#bio-1">
-              <h1>08:30 AM</h1>
-              <p>Building A, Room 2345</p>
+            <a href="#app-3" class="page maps">
+              <h1>3:00 PM</h1>
+              <p>Building A, Room 4218</p>
             </a>
           </div>
           <div class="ui-block-b procedure-info">
-            <a href="#bio-1">
-              <h1>Another title</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            <a href="#app-3" class="page proc">
+              <h1>X-Ray &amp; Radiology</h1>
+              <p class="home-descript">A radiologist will use an X-Ray machine to take several images of your internal organs. This is a painless procedure; however, the radiologist may ask you to move yourself in various positions to optimize the image. Afterward, the radiologist will process the images and your physician will review the results and consult with you and answer any questions that you might have.</p>
             </a>
           </div>
           <div class="ui-block-c"></div>
           <div class="ui-block-d"></div>
           <div class="ui-block-e doc-info">
-            <a href="#bio-1">
-              <div><img src="img/doc3_thumb.jpg" /></div>
-              <div><caption>Dr. Jeff Thompson</caption></div>
+            <a href="#app-3" class="page bio">
+              <div class="doc-caption"><caption>Dr. Bryant Davis</caption></div>
+              <div><img src="img/doctors/bryant_thumb.jpg" width="79" height="79" /></div>
             </a>
           </div>
         </div>
@@ -424,25 +370,24 @@
       <li>
         <div class="ui-grid-d">
           <div class="ui-block-a loc-info">
-            <a href="#bio-1">
-              <h1>08:30 AM</h1>
-              <p>Building A, Room 2345</p>
+            <a href="#app-4" class="page maps">
+              <h1>09:00 AM</h1>
+              <p>Building B, Radiology Lab 1</p>
             </a>
           </div>
-          <div class="ui-block-b procedure-info">
-            <a href="#bio-1">
-              <h1>Full-Body Physical</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+          
+			<div class="ui-block-b procedure-info">
+            <a href="#app-4" class="page proc">
+              <h1>MRI &amp; Radiology</h1>
+              <p class="home-descript">A radiologist will use an MRI to take images of your body. This is a painless procedure; however, you will be asked to maintain the same position for long periods of time as well as to remain relatively still to optimize the image. Afterward, the radiologist will process the images and your physician will review the results and consult with you and answer your questions.</p>
             </a>
           </div>
           <div class="ui-block-c"></div>
           <div class="ui-block-d"></div>
           <div class="ui-block-e doc-info">
-            <a href="#bio-1">
-              <div><img src="img/doc1_thumb.jpg" /></div>
-              <div><caption>Dr. William Gordon</caption></div>
+            <a href="#app-4" class="page bio">
+              <div class="doc-caption"><caption>Dr. Donna Burch</caption></div>
+              <div><img src="img/doctors/donna_thumb.jpg" width="79" height="79" /></div>
             </a>
           </div>
         </div>
@@ -450,51 +395,23 @@
       <li>
         <div class="ui-grid-d">
           <div class="ui-block-a loc-info">
-            <a href="#bio-1">
-              <h1>08:30 AM</h1>
-              <p>Building A, Room 2345</p>
+            <a href="#app-5" class="page maps">
+              <h1>12:00 PM</h1>
+              <p>Building B, Radiology Lab 2</p>
             </a>
           </div>
           <div class="ui-block-b procedure-info">
-            <a href="#bio-1">
-              <h1>What the what</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
+            <a href="#app-5" class="page proc">
+              <h1>Sonogram &amp; Radiology</h1>
+              <p class="home-descript">A radiologist will use a sonogram to take images of your internal organs. This is a painless procedure; however, you may be asked to maintain the same position as well as to remain relatively still to optimize the image. Afterward, the radiologist will process the images and your physician will review the results and consult with you and answer your questions.</p>
             </a>
           </div>
           <div class="ui-block-c"></div>
           <div class="ui-block-d"></div>
           <div class="ui-block-e doc-info">
-            <a href="#bio-1">
-              <div><img src="img/doc2_thumb.jpg" /></div>
-              <div><caption>Dr. Linda Sanchez</caption></div>
-            </a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="ui-grid-d">
-          <div class="ui-block-a loc-info">
-            <a href="#bio-1">
-              <h1>08:30 AM</h1>
-              <p>Building A, Room 2345</p>
-            </a>
-          </div>
-          <div class="ui-block-b procedure-info">
-            <a href="#bio-1">
-              <h1>Another title</h1>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-              <p>Description for procedure. Description for procedure.Description for procedure.Description for procedure.Description for procedure.Description for procedure.</p>
-            </a>
-          </div>
-          <div class="ui-block-c"></div>
-          <div class="ui-block-d"></div>
-          <div class="ui-block-e doc-info">
-            <a href="#bio-1">
-              <div><img src="img/doc3_thumb.jpg" /></div>
-              <div><caption>Dr. Jeff Thompson</caption></div>
+            <a href="#app-5" class="page bio">
+              <div class="doc-caption"><caption>Dr. Jim Coleman</caption></div>
+              <div><img src="img/doctors/james_thumb.jpg" width="79" height="79" /></div>
             </a>
           </div>
         </div>
@@ -503,13 +420,20 @@
   </div>
 </div>
 
-<!-- END of Home Page Permutations -->
+	<!-- END ALL -->
 
-<div data-role="page" id="app-1">
+
+<!--
+   		##########################
+			END Home Page Permutations
+   		##########################
+-->
+
+<div data-role="page" id="app-1" class="appt-land">
 
   <div data-role="header">
-    <a href="#home-screen" data-rel="back" data-theme="a">Destinations Program</a>
-    <a href="#" data-theme="d" style="position: absolute; left: 190px; top: 5px; width: 96px">Call Us Now</a>
+    <a href="#home-screen" data-rel="back" data-theme="a">MiConcierge</a>
+    <a href="#" data-theme="d" style="position: absolute; left: 130px !important; top: 5px; width: 96px">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d" style="position: absolute; top: 5px; right: 10px">Help</a>
   </div>
@@ -517,7 +441,7 @@
   <div data-role="fieldcontain">
     <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
         <input type="radio" name="appt1-switcher" id="appt1-bio" value="bio" checked="checked" />
-        <label for="appt1-bio">Doctor&rsquo;s Bio</label>
+        <label for="appt1-bio">Doctor Bio</label>
 
         <input type="radio" name="appt1-switcher" id="appt1-maps" value="maps" />
         <label for="appt1-maps">Maps &amp; Wayfinding</label>
@@ -543,11 +467,11 @@
   </div>
 </div>
 
-<div data-role="page" id="app-2">
+<div data-role="page" id="app-2" class="appt-land">
 
   <div data-role="header">
-    <a href="#home-screen" data-rel="back" data-theme="a">Destinations Program</a>
-    <a href="#" data-theme="d" style="position: absolute; left: 190px; top: 5px; width: 96px">Call Us Now</a>
+    <a href="#home-screen" data-rel="back" data-theme="a">MiConcierge</a>
+    <a href="#" data-theme="d" style="position: absolute; left: 130px !important; top: 5px; width: 96px">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d" style="position: absolute; top: 5px; right: 10px">Help</a>
   </div>
@@ -555,7 +479,7 @@
   <div data-role="fieldcontain">
     <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
         <input type="radio" name="appt2-switcher" id="appt2-bio" value="bio" checked="checked" />
-        <label for="appt2-bio">Doctor&rsquo;s Bio</label>
+        <label for="appt2-bio">Doctor Bio</label>
 
         <input type="radio" name="appt2-switcher" id="appt2-maps" value="maps" />
         <label for="appt2-maps">Maps &amp; Wayfinding</label>
@@ -565,17 +489,17 @@
     </fieldset>
   </div>
   
-  <div data-role="content" id="appt2-bio-box" class="appt2-box">
+  <div data-role="content" id="appt2-bio-box" class="appt-land">
     <h2>Bio</h2>
     <p>Blah blah blah blah blah blah blah</p>
   </div>
   
-  <div data-role="content" id="appt2-maps-box" class="appt2-box">
+  <div data-role="content" id="appt2-maps-box" class="appt-land">
     <h2>Maps &amp; Wayfinding</h2>
     <p>Blah blah blah blah blah blah blah</p>
   </div>
 
-  <div data-role="content" id="appt2-proc-box" class="appt3-box">
+  <div data-role="content" id="appt2-proc-box" class="appt-land">
     <h2>Procedure</h2>
     <p>Blah blah blah blah blah blah blah</p>
   </div>
@@ -584,8 +508,8 @@
 <div data-role="page" id="app-3">
 
   <div data-role="header">
-    <a href="#home-screen" data-rel="back" data-theme="a">Destinations Program</a>
-    <a href="#" data-theme="d" style="position: absolute; left: 190px; top: 5px; width: 96px">Call Us Now</a>
+    <a href="#home-screen" data-rel="back" data-theme="a">MiConcierge</a>
+    <a href="#" data-theme="d" style="position: absolute; left: 130px !important; top: 5px; width: 96px">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d" style="position: absolute; top: 5px; right: 10px">Help</a>
   </div>
@@ -593,7 +517,7 @@
   <div data-role="fieldcontain">
     <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
         <input type="radio" name="appt3-switcher" id="appt3-bio" value="bio" checked="checked" />
-        <label for="appt3-bio">Doctor&rsquo;s Bio</label>
+        <label for="appt3-bio">Doctor Bio</label>
 
         <input type="radio" name="appt3-switcher" id="appt3-maps" value="maps" />
         <label for="appt3-maps">Maps &amp; Wayfinding</label>
@@ -603,27 +527,27 @@
     </fieldset>
   </div>
   
-  <div data-role="content" id="appt3-bio-box" class="appt3-box">
+  <div data-role="content" id="appt3-bio-box" class="appt-land">
     <h2>Bio</h2>
     <p>Blah blah blah blah blah blah blah</p>
   </div>
   
-  <div data-role="content" id="appt3-maps-box" class="appt3-box">
+  <div data-role="content" id="appt3-maps-box" class="appt-land">
     <h2>Maps &amp; Wayfinding</h2>
     <p>Blah blah blah blah blah blah blah</p>
   </div>
 
-  <div data-role="content" id="appt3-proc-box" class="appt3-box">
+  <div data-role="content" id="appt3-proc-box" class="appt-land">
     <h2>Procedure</h2>
     <p>Blah blah blah blah blah blah blah</p>
   </div>
 </div>
 
-<div data-role="page" id="app-4">
+<div data-role="page" id="app-4" class="appt-land">
 
   <div data-role="header">
-    <a href="#home-screen" data-rel="back" data-theme="a">Destinations Program</a>
-    <a href="#" data-theme="d" style="position: absolute; left: 190px; top: 5px; width: 96px">Call Us Now</a>
+    <a href="#home-screen" data-rel="back" data-theme="a">MiConcierge</a>
+    <a href="#" data-theme="d" style="position: absolute; left: 130px !important; top: 5px; width: 96px">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d" style="position: absolute; top: 5px; right: 10px">Help</a>
   </div>
@@ -631,7 +555,7 @@
   <div data-role="fieldcontain">
     <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
         <input type="radio" name="appt4-switcher" id="appt4-bio" value="bio" checked="checked" />
-        <label for="appt4-bio">Doctor&rsquo;s Bio</label>
+        <label for="appt4-bio">Doctor Bio</label>
 
         <input type="radio" name="appt4-switcher" id="appt4-maps" value="maps" />
         <label for="appt4-maps">Maps &amp; Wayfinding</label>
@@ -657,11 +581,11 @@
   </div>
 </div>
 
-<div data-role="page" id="app-5">
+<div data-role="page" id="app-5" class="appt-land">
 
   <div data-role="header">
-    <a href="#home-screen" data-rel="back" data-theme="a">Destinations Program</a>
-    <a href="#" data-theme="d" style="position: absolute; left: 190px; top: 5px; width: 96px">Call Us Now</a>
+    <a href="#home-screen" data-rel="back" data-theme="a">MiConcierge</a>
+    <a href="#" data-theme="d" style="position: absolute; left: 130px !important; top: 5px; width: 96px">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d" style="position: absolute; top: 5px; right: 10px">Help</a>
   </div>
@@ -669,7 +593,7 @@
   <div data-role="fieldcontain">
     <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
         <input type="radio" name="appt5-switcher" id="appt5-bio" value="bio" checked="checked" />
-        <label for="appt5-bio">Doctor&rsquo;s Bio</label>
+        <label for="appt5-bio">Doctor Bio</label>
 
         <input type="radio" name="appt5-switcher" id="appt5-maps" value="maps" />
         <label for="appt5-maps">Maps &amp; Wayfinding</label>
@@ -695,11 +619,11 @@
   </div>
 </div>
 
-<div data-role="page" id="app-6">
+<div data-role="page" id="app-6" class="appt-land">
 
   <div data-role="header">
-    <a href="#home-screen" data-rel="back" data-theme="a">Destinations Program</a>
-    <a href="#" data-theme="d" style="position: absolute; left: 190px; top: 5px; width: 96px">Call Us Now</a>
+    <a href="#home-screen" data-rel="back" data-theme="a">MiConcierge</a>
+    <a href="#" data-theme="d" style="position: absolute; left: 130px !important; top: 5px; width: 96px">Call Us Now</a>
     <h1>Appointment Information</h1>
     <a href="#" data-theme="d" style="position: absolute; top: 5px; right: 10px">Help</a>
   </div>
@@ -707,7 +631,7 @@
   <div data-role="fieldcontain">
     <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
         <input type="radio" name="appt6-switcher" id="appt6-bio" value="bio" checked="checked" />
-        <label for="appt6-bio">Doctor&rsquo;s Bio</label>
+        <label for="appt6-bio">Doctor Bio</label>
 
         <input type="radio" name="appt6-switcher" id="appt6-maps" value="maps" />
         <label for="appt6-maps">Maps &amp; Wayfinding</label>
@@ -732,7 +656,48 @@
     <p>Blah blah blah blah blah blah blah</p>
   </div>
 </div>
+
+
+<div data-role="page" id="app-7" class="appt-land">
+
+  <div data-role="header">
+    <a href="#home-screen" data-rel="back" data-theme="a">MiConcierge</a>
+    <a href="#" data-theme="d" style="position: absolute; left: 130px !important; top: 5px; width: 96px">Call Us Now</a>
+    <h1>Appointment Information</h1>
+    <a href="#" data-theme="d" style="position: absolute; top: 5px; right: 10px">Help</a>
+  </div>
+
+  <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup" data-type="horizontal" class="segment-control">
+        <input type="radio" name="appt7-switcher" id="appt7-bio" value="bio" checked="checked" />
+        <label for="appt6-bio">Doctor Bio</label>
+
+        <input type="radio" name="appt7-switcher" id="appt7-maps" value="maps" />
+        <label for="appt6-maps">Maps &amp; Wayfinding</label>
+
+        <input type="radio" name="appt7-switcher" id="appt7-proc" value="proc" />
+        <label for="appt6-proc">Procedure Info</label>
+    </fieldset>
+  </div>
+  
+  <div data-role="content" id="appt7-bio-box" class="appt7-box">
+    <h2>Bio</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+  
+  <div data-role="content" id="appt7-maps-box" class="appt7-box">
+    <h2>Maps &amp; Wayfinding</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+
+  <div data-role="content" id="appt7-proc-box" class="appt7-box">
+    <h2>Procedure</h2>
+    <p>Blah blah blah blah blah blah blah</p>
+  </div>
+</div>
+
 <!-- END Deeper Appointment Screens -->
+
 
 <!-- START Help Popover -->
 <div class="popover" id="help-popover">
@@ -750,7 +715,7 @@
 
 
 <!-- START Call Us Screen -->
-<div data-role="page" class="call-alert">
+<div class="call-alert">
   <div id="callus-container">
     <div class="callus-prompt" id="callus-prompthead"></div>
     <div class="callus-prompt" id="callus-promptbody">
