@@ -30,6 +30,11 @@
         $('div[id*=' + $page.data('segControl') + ']').show();
       });
 
+      //$('a[data-rel="back"]').tap(function() {
+        //$('#home-screen').trigger('pageinit');
+        //console.log('here');
+      //});
+
       // Call us Button
       $('a.callus-button').tap(function() {
         $('#callus-container').modal();
@@ -53,13 +58,13 @@
       $('div.call-alert').hide();
       $('div[data-role="content"]').hide();
 
-      $('div[id*=' + $page.data('segControl') + ']').show();
-
-      $('input[value="' + $page.data('segControl') + '"]').trigger('change');
+      $(pageID + ' div[id*=' + $page.data('segControl') + ']').show();
+      $(pageID + ' input[value="' + $page.data('segControl') + '"]').trigger('change');
     }
 
     $('div[data-role="page"]').live('pageinit', setUpPage);
     $('div[data-role="page"]').live('pagechange', setUpPage);
+    $('div[data-role="page"]').live('pageshow', setUpPage);
   </script>
 </head> 
 <body> 
