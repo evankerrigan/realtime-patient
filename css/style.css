@@ -1,4 +1,24 @@
 .segment-control { margin: 0 auto !important }
+.home-descript { width: 618px !important; white-space: normal !important; font-size: 14px; line-height: 19px}
+.procedure-info h1 { margin-bottom: 14px }
+.cal-box a {color: #2F3E46 !important; text-decoration: none; cursor: pointer }
+.doc-info { margin-top: 16px }
+.doc-caption { margin-top: 2px !important; margin-bottom: 8px }
+.procedure-info h1 { margin: 0 0 0.6em !important}
+.loc-info { margin-top: -12px; padding-top: 18px !important }
+.patient-welcome { margin-left: 1em }
+
+/* SEGMENTED CONTROL STYLING */
+#home-screen fieldset .ui-radio, 
+#home-screen fieldset .ui-radio label {  width: 118px; text-align: center }
+#home-screen fieldset { width: 352px; margin: 0 auto }
+#home-screen div[data-role='fieldcontain'] { margin-top: 48px }
+
+.appt-land fieldset .ui-radio, 
+.appt-land fieldset .ui-radio label {  width: 200px; text-align: center }
+.appt-land fieldset { width: 600px; margin: 0 auto }
+.appt-land div[data-role='fieldcontain'] { margin-top: 48px }
+
 
 /* Popover Styling */
 
@@ -113,18 +133,19 @@
 /* Call Us Prompts Overrides */
 #callus-container {
 	position: fixed;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	opacity: 0.9;
 }
 
 #simplemodal-overlay {
 	background-color: #000;
-	opacity: 0.9;
+	opacity: 1;
 }
 
 #callus-container a[title='Close'] { visibility: hidden }
 #callus-promptbody { position: relative !important; margin: 17px auto 0 !important; padding: 0.95em !important }
 #prompt-buttons a { float: left; width: 45% !important; color: #fff !important; text-decoration: none !important }
-#callus-promptbody p, #callus-promphead .ui-title, #callus-promptbody .ui-btn-text { color: #fff !important; text-shadow: 0 1px 0 #4C596A; text-align: center }
+#callus-promptbody p, #callus-prompthead .ui-title, #callus-promptbody .ui-btn-text { color: #fff !important; text-shadow: 0 1px 0 #4C596A; text-align: center }
 #callus-promptbody #prompt-buttons { margin: 0 auto; width: 98% }
 #callus-no { margin-right: 1em; margin-left: 0.75em }
 #callus-promptbody { padding-top: 0 !important; margin-top: -16px !important}
