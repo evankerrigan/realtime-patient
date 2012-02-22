@@ -12,39 +12,22 @@
   <script src="js/jquery.mobile.min.js"></script>
   <script src="js/jquery.simplemodal.js"></script>
   <script>
-    // Simple state machine to let us change/filter pages.
 
-    function Context(page, control) {
-      return {
-        'page': page,
-        'control': control,
-        'prev': null
-      };
-    }
-
-    var APP = new Context('#home-screen', 'today');
-
-    function setUpPage(ev) {
-      //console.log($(this));
-      //console.log(ev);
-      //$(this).show();
-      //
-
-      // Event handler for page change links.
-      $('a.page').tap(function() {
-        var prev = APP;
-
-        APP.prev = {control:APP.control, page:APP.page};
-
-        APP.control = $(this).attr('class').split(' ')[1]
-        APP.page = $(this).attr('href');
-      });
+    function setUpPage(ev, ui) {
+      var $page  = $(this),
+          pageID = '#' + $(this).attr('id'),
+          $radio = $(pageID + ' input[type="radio"]'),
+          filter = $(pageID + ' input[checked="checked"]').attr('value');
+          
+      $page.data('segControl', filter);
 
       // Event handler for radio buttons.
-      $('input[type="radio"]').change(function() {
-        APP.control = $(this).val();
+      $radio.change(function() {
+        $page.data('segControl', $(this).val());
+
         $('div[data-role="content"]').hide();
-        $('div[id*=' + APP.control + ']').show();
+
+        $('div[id*=' + $page.data('segControl') + ']').show();
       });
 
       // Call us Button
@@ -63,27 +46,16 @@
 
       });
 
-      $('a[data-rel="back"]').tap(function () {
-        /*APP.page = APP.prev.page;
-        APP.control = APP.prev.control;
-        APP.prev = null;*/
-      });
-
-      // Back button fix
-      /*$('a[data-rel="back"]').click(function() {
-        APP.page = '#home-screen';
-        APP.control = 'today';
-      });*/
-
       $(".ui-dialog button").live("click", function() { $("[data-role='dialog']").dialog("close"); });
 
       $('div[data-role="page"]').hide();
-      $(this).show();
+      $page.show();
       $('div.call-alert').hide();
       $('div[data-role="content"]').hide();
-      $('div[id*=' + APP.control + ']').show();
 
-      $('input[value="' + APP.control + '"]').trigger('change');
+      $('div[id*=' + $page.data('segControl') + ']').show();
+
+      $('input[value="' + $page.data('segControl') + '"]').trigger('change');
     }
 
     $('div[data-role="page"]').live('pageinit', setUpPage);
