@@ -1,5 +1,5 @@
 .segment-control { margin: 0 auto !important }
-.home-descript { width: 618px !important; white-space: normal !important; font-size: 14px; line-height: 19px}
+.home-descript { width: 490px !important; white-space: normal !important; font-size: 14px; line-height: 19px}
 .procedure-info h1 { margin-bottom: 14px }
 .cal-box a {color: #2F3E46 !important; text-decoration: none; cursor: pointer }
 .doc-info { margin-top: 16px }
@@ -7,6 +7,7 @@
 .procedure-info h1 { margin: 0 0 0.6em !important}
 .loc-info { margin-top: -12px; padding-top: 18px !important }
 .patient-welcome { margin-left: 1em }
+
 
 /* SEGMENTED CONTROL STYLING */
 #home-screen fieldset .ui-radio, 
@@ -18,6 +19,55 @@
 .appt-land fieldset .ui-radio label {  width: 200px; text-align: center }
 .appt-land fieldset { width: 600px; margin: 0 auto }
 .appt-land div[data-role='fieldcontain'] { margin-top: 48px }
+
+
+/* FEEDBACK REVIEW STYLING */
+.needs-review {
+	background-color: #fff !important;
+	opacity: .25 !important;
+}
+
+.feedback-container { width: 424px; white-space: normal; margin-left: 2.5em}
+.procedure-info h2 { width: 490px !important; white-space: normal !important; text-align: center; color: #2F3E46 !important; margin-bottom: 1.8em }
+
+.feedback-container a { color: #fff !important }
+
+.feedback-button {   
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#464972), color-stop(50%,#212555));
+	background: -moz-linear-gradient(center top, #464972 50%, #212555 50%);
+	-webkit-box-shadow: 1px 1px 1px 0px #3f426d;
+	-moz-box-shadow: 1px 1px 1px 0px #3f426d;
+	box-shadow: 1px 1px 1px 0px #3f426d;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-transition: background-color 0s 0;
+	-moz-transition: background-color 0s 0;
+	-o-transition: background-color 0s 0;
+	transition: background-color 0s 0;
+	text-shadow: 0px -1px 1px #37363c;
+	padding: 8px 0;
+	display: inline-block;
+	border-color: #333;
+	border-width: 1px;
+	border-style: solid;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	width: 200px;
+	text-shadow: 0px -1px 1px #2c2c34;
+}
+
+.feedback-well { 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#A1D54E), color-stop(50%,#7DBE0E));
+	margin-right: 1.5em;
+}
+
+.feedback-notwell { 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#F65B40), color-stop(50%,#E83726));
+}
+
+
 
 
 /* Popover Styling */
